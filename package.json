@@ -1,0 +1,14 @@
+{
+  "name": "cmvp-proto",
+  "author": "kmruiz <masruizkevin@gmail.com>",
+  "dependencies": {
+    "angular-route": ">= 1.3.0",
+    "require": "*",
+    "postal": ">= 0.10.3"
+  },
+  "engine": "node 0.4.1",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-bower-concat": "^0.4.0"
+  }
+}

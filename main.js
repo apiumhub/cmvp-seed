@@ -8,11 +8,4 @@
  * the global 'app' object (as you can see in app.registerObject...). This function is the only one that must be kept.
  */
 
-require(['lib/angular.min.js'], function () {
-    require(['lib/angular-route.min.js', 'framework/Option.js', 'framework/ApplicationFactory.js'], function () {
-        require(['app/manifest.js'], function () {
-            // Use the app itself configuration to load it dependencies and initialize itself.
-            app.initialize();
-        });
-    });
-});
+app.initialize();
