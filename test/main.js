@@ -22,7 +22,8 @@ var manifest = [
 var libs = [
     '/base/node_modules/angular/angular.min.js',
     '/base/node_modules/angular-route/angular-route.min.js',
-    '/base/node_modules/postal/lib/postal.min.js'
+    '/base/node_modules/postal/lib/postal.min.js',
+    '/base/node_modules/jquery/dist/jquery.min.js'
 ];
 
 
