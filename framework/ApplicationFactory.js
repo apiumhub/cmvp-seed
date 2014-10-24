@@ -34,7 +34,8 @@
 
     function applyGetsTo(obj) {
         var impl = obj || {};
-        impl.getView = impl.getController = impl.getModel = impl.getPresenter = function (name) {
+        impl.getView = impl.getController = impl.getPresenter = impl.getModel =
+        impl.get = function (name) {
             var x = impl.getObject(name);
             if (!x) {
                 throw new Error("Could not find object: " + name);
@@ -47,7 +48,8 @@
 
     function applySetsTo(obj) {
         var impl = obj || {};
-        impl.registerView = impl.registerController = impl.registerPresenter = impl.registerModel = function (cfg, factory) {
+        impl.registerView = impl.registerController = impl.registerPresenter = impl.registerModel =
+        impl.register = function (cfg, factory) {
             if (factory == null) {
                 ensureFunction(cfg, "factory");
                 impl.registerObject({}, cfg);
@@ -107,7 +109,9 @@
         newRequireApplication: function (name, config) {
             // check if we have require loaded
             if (ensureFunction(jsScope.define) && ensureFunction(jsScope.require)) {
-                jsScope.require.config(config || {});
+                if (config) {
+                    jsScope.requirejs.config(config);
+                }
                 var impl = {type: 'require'};
                 impl.registerObject = function (configuration, factory) {
                     var cfg = configuration || {};

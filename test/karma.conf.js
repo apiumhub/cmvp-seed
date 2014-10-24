@@ -3,24 +3,16 @@ module.exports = function(config) {
 
         // base path, that will be used to resolve files and exclude
         basePath: '../',
+        urlRoot: '/',
         frameworks: ['jasmine', 'requirejs'],
 
         // list of files / patterns to load in the browser
-        files: [ {pattern: 'node_modules/**', included: false},
-            'node_modules/angular/angular.min.js',
-            'node_modules/angular-route/angular-route.min.js',
-            'node_modules/postal/node_modules/conduitjs/lib/conduit.min.js',
-            'node_modules/postal/node_modules/lodash/dist/lodash.min.js',
-            'node_modules/postal/lib/postal.min.js',
-            'node_modules/requirejs/require.js',
-            'node_modules/sinon/pkg/sinon*.js',
-            /** Load Application Framework **/
-            'framework/Option.js',
-            'framework/ApplicationFactory.js',
-            /** Load Application Manifest **/
-            'app/manifest.js',
+        files: [
+            {pattern: 'node_modules/**/*.js', included: false},
+            {pattern: 'framework/**/*.js', included: false},
+            {pattern: 'app/**/*.js', included: false},
+            {pattern: 'test/src/**/*.js', included: false},
             /** Load Tests **/
-            'test/src/**',
             'test/main.js'
 
         ],
@@ -28,11 +20,6 @@ module.exports = function(config) {
         // possible values: 'dots', 'progress', 'junit', 'teamcity'
         // CLI --reporters progress
         reporters: ['progress'],
-
-        junitReporter: {
-            // will be resolved to basePath (in the same way as files/exclude patterns)
-            outputFile: 'logs/test-results_site.html'
-        },
 
         port: 9876,
 

@@ -11,15 +11,15 @@ function AngularConfig($routeProvider) {
 AngularConfig.$inject = [ '$routeProvider' ];
 
 /** Application Building **/
-var app = ApplicationFactory.newRequireApplication("RequireJS", {
-    baseUrl: 'app/'
-}).composedWith(ApplicationFactory.newAngularApplication('AngularApp', [ 'ngRoute' ], AngularConfig));
+var app = ApplicationFactory.newRequireApplication("RequireJS")
+    .composedWith(ApplicationFactory.newAngularApplication('AngularApp', [ 'ngRoute' ], AngularConfig));
 
 app.manifest = {
     authors: [ 'Apium' ],
     version: 0.1,
     src: [
         'Configuration',
+        'services/EventBus',
         'controllers/MyController', 'views/MyView', 'presenters/MyPresenter', 'models/MyModel'
     ]
 };
