@@ -1,24 +1,25 @@
 {
-  "name": "cmvp-proto",
-  "author": "kmruiz <masruizkevin@gmail.com>",
-  "dependencies": {
-    "angular-route": ">= 1.3.0",
-    "angular": ">= 1.3.0",
-    "require": "*",
-    "postal": ">= 0.10.3",
-    "sinon": ">= 1.10.3",
-    "jasmine": ">= 2.0",
-    "karma": ">= 0.12.24"
-  },
-  "engine": "node 0.4.1",
-  "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-cli": "^0.1.13",
-    "load-grunt-tasks": "^1.0.0",
-    "grunt-karma": "^0.9.0",
-    "karma": "~0.12.0",
-    "karma-jasmine": "~0.2.0",
-    "karma-requirejs": "^0.2.2",
-    "karma-phantomjs-launcher": "~0.1.4"
-  }
+    "name": "cmvp-proto",
+    "author": "kmruiz <masruizkevin@gmail.com>",
+    "dependencies": {
+        "angular-route": ">= 1.3.0",
+        "angular": ">= 1.3.0",
+        "require": "*",
+        "postal": ">= 0.10.3",
+        "sinon": ">= 1.10.3",
+        "jasmine": ">= 2.0",
+        "karma": ">= 0.12.24",
+        "jquery": "1.11.1"
+    },
+    "engine": "node 0.4.1",
+    "devDependencies": {
+        "grunt": "^0.4.5",
+        "grunt-cli": "^0.1.13",
+        "load-grunt-tasks": "^1.0.0",
+        "grunt-karma": "^0.9.0",
+        "karma": "~0.12.0",
+        "karma-jasmine": "~0.2.0",
+        "karma-requirejs": "^0.2.2",
+        "karma-phantomjs-launcher": "~0.1.4"
+    }
 }

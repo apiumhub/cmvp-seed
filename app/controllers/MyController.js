@@ -9,6 +9,8 @@ app.registerController(function (container) {
 
         if ($routeParams) {
             this.view.data.currentId = $routeParams.modelId;
+        } else {
+            this.view.data.currentId = 0;
         }
 
         this.view.show();

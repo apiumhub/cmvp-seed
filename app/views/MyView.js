@@ -15,6 +15,8 @@ app.registerView(function (container) {
         $scope.event = this.event;
 
         this.data.loaded = true;
+        this.data.currentModel = null;
+        this.data.currentError = "";
 
         this.model = model;
         this.presenter = presenter;
@@ -25,7 +27,14 @@ app.registerView(function (container) {
     };
 
     MyView.prototype.showModel = function (model) {
-        this.data.currentModel = model.getOrElse({text: "Not found!"});
+        this.data.currentModel = model;
+        this.data.currentError = null;
+    };
+
+    MyView.prototype.showError = function (error) {
+        console.log(error);
+        this.data.currentModel = null;
+        this.data.currentError = JSON.stringify(error);
     };
 
     MyView.newInstance = function ($scope, $model, $presenter) {

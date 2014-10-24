@@ -6,9 +6,12 @@ app.registerModel(function (container) {
 
     }
 
-    MyModel.prototype.getModelById = function (id, callbacks) {
-        var value = (id % 2 == 0 && id > 0 ? Some({text: "Model by Id " + id}) : None());
-        callbacks.onSuccess(value);
+    MyModel.prototype.getModelById = function (id) {
+        if (id == undefined) {
+            throw new Error("Validation error!");
+        }
+
+        return $.getJSON('http://localhost/json/' + id + ".json");
     };
 
     MyModel.newInstance = function () {

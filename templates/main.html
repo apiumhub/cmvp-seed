@@ -1,8 +1,12 @@
 <div ng-controller="MyController" ng-init="event.onLoad()">
     <span>Controller is {{ data.loaded }}</span>
     <h1>{{title}}</h1>
-    <label for="currentId">Current Model Id</label> <input id="currentId" type="text" ng-change="event.onChangeModel(data.currentId)" ng-model="data.currentId" /><br />
+    <label for="currentId">Current Model Id</label>
+    <input id="currentId" type="text" ng-change="event.onChangeModel(data.currentId)" ng-model="data.currentId" /><br />
     <div style="border: 1px solid black">
         {{ data.currentModel.text }}
+    </div>
+    <div style="color: red">
+        {{ data.currentError }}
     </div>
 </div>
