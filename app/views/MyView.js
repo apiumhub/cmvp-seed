@@ -10,6 +10,7 @@ app.registerView(function (container) {
     function MyView($scope, model, presenter) {
         this.data = {};
         this.event = {};
+        this.$scope = $scope;
 
         $scope.data = this.data;
         $scope.event = this.event;
@@ -29,12 +30,13 @@ app.registerView(function (container) {
     MyView.prototype.showModel = function (model) {
         this.data.currentModel = model;
         this.data.currentError = null;
+        this.$scope.$apply();
     };
 
-    MyView.prototype.showError = function (error) {
-        console.log(error);
+    MyView.prototype.showError = function () {
         this.data.currentModel = null;
-        this.data.currentError = JSON.stringify(error);
+        this.data.currentError = "Some error";
+        this.$scope.$apply();
     };
 
     MyView.newInstance = function ($scope, $model, $presenter) {
