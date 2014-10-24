@@ -1,13 +1,24 @@
 /**
  * Created by kevin on 10/24/14.
  */
-app.register({dependencies: ['postal']}, function (postal) {
+app.register(function (container) {
+    var postal = container.get('postal');
+
     function EventBus() {
 
     }
 
-    EventBus.prototype.sayHello = function () {
-        return "Hello!";
+    console.log(postal);
+    EventBus.prototype.subscribe = function (parameters) {
+        return {
+            unsuscribe: postal.subscribe(parameters).unsuscribe,
+            channel: parameters.channel,
+            topic: parameters.topic
+        };
+    };
+
+    EventBus.prototype.publish = function (parameters) {
+        postal.publish(parameters);
     };
 
     return new EventBus();

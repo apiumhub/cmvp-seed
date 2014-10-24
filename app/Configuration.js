@@ -1,7 +1,7 @@
 /**
  * Created by kevin on 10/23/14.
  */
-app.registerObject({name: 'Configuration'}, function () {
+app.register(function () {
     return {title: "Hello world!"}
 });
 
