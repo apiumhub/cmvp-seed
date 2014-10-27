@@ -25,22 +25,38 @@
  **/
 
 (function (jsScope) {
+    function isFunction(func) {
+        return Object.prototype.toString.call(func) == '[object Function]';
+    }
+
     function ensureFunction(func, paramName) {
-        if (Object.prototype.toString.call(func) != '[object Function]') {
+        if (!isFunction(func)) {
             throw new Error(paramName + " must be a function.");
         }
         return true;
     }
+    
+    function errFun(msg) {
+        return function () {
+            throw new Error(msg)
+        };
+    }
 
     function applyGetsTo(obj) {
         var impl = obj || {};
-        impl.getView = impl.getController = impl.getPresenter = impl.getModel =
-        impl.get = function (name) {
+
+        impl.getFunction = impl.getObject;
+        impl.getView = impl.getController = impl.getPresenter = impl.getModel = function (name) {
             var x = impl.getObject(name);
             if (!x) {
                 throw new Error("Could not find object: " + name);
             }
-            return x();
+
+            if (isFunction(x)) {
+                return x();
+            } else {
+                return x;
+            }
         };
 
         return impl;
@@ -119,11 +135,11 @@
                         jsScope.define(cfg.name, cfg.dependencies, factory);
                     } else if (cfg.name != null && cfg.dependencies == null) {
                         jsScope.define(cfg.name, [ ], function (require) {
-                            return factory.bind(require, applyGetsTo({require: require, getObject: require, registerObject: throwException("Parameter is a read-only context") }));
+                            return factory.bind(require, applyGetsTo({require: require, getObject: require, registerObject: errFun("Parameter is a read-only context") }));
                         });
                     } else {
                         jsScope.define(function (require) {
-                            return factory.bind(require, applyGetsTo({require: require, getObject: require, registerObject: throwException("Parameter is a read-only context") }));
+                            return factory.bind(require, applyGetsTo({require: require, getObject: require, registerObject: errFun("Parameter is a read-only context") }));
                         });
                     }
                 };

@@ -2,16 +2,15 @@
  * Created by kevin on 10/24/14.
  */
 app.register(function (container) {
-    var postal = container.get('postal');
+    var postal = container.getObject('postal');
 
     function EventBus() {
 
     }
 
-    console.log(postal);
     EventBus.prototype.subscribe = function (parameters) {
         return {
-            unsuscribe: postal.subscribe(parameters).unsuscribe,
+            unsubscribe: postal.subscribe(parameters).unsubscribe,
             channel: parameters.channel,
             topic: parameters.topic
         };
@@ -21,5 +20,6 @@ app.register(function (container) {
         postal.publish(parameters);
     };
 
-    return new EventBus();
+    var instance = new EventBus();
+    return { getInstance: function () { return instance; }};
 });

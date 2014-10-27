@@ -6,6 +6,7 @@ app.registerView(function (container) {
     var MyPresenter = container.getPresenter('presenters/MyPresenter');
     var MyModel = container.getModel('models/MyModel');
     var Configuration = container.getObject('Configuration');
+    var RichViewWeaver = container.getObject('services/RichViewWeaver');
 
     function MyView($scope, model, presenter) {
         this.data = {};
@@ -30,13 +31,11 @@ app.registerView(function (container) {
     MyView.prototype.showModel = function (model) {
         this.data.currentModel = model;
         this.data.currentError = null;
-        this.$scope.$apply();
     };
 
     MyView.prototype.showError = function () {
         this.data.currentModel = null;
         this.data.currentError = "Some error";
-        this.$scope.$apply();
     };
 
     MyView.newInstance = function ($scope, $model, $presenter) {
@@ -44,7 +43,11 @@ app.registerView(function (container) {
         var model = $model || MyModel.newInstance().getOrElse(throwException("MyModel could not be instantiated!!"));
         var presenter = $presenter || MyPresenter.newInstance().getOrElse(throwException("MyPresenter could not be instantiated!!"));
 
-        return Some(new MyView(scope, model, presenter));
+        var view = new MyView(scope, model, presenter);
+        var weaver = new RichViewWeaver();
+
+        weaver.weave(view);
+        return Some(view);
     };
 
     return MyView;

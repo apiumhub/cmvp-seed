@@ -10,33 +10,63 @@ for (var file in window.__karma__.files) {
     }
 }
 
-var base = [
-    '/base/framework/Option.js',
-    '/base/framework/ApplicationFactory.js'
-];
-
-var manifest = [
-    '/base/app/manifest.js'
-];
-
-var libs = [
-    '/base/node_modules/angular/angular.min.js',
-    '/base/node_modules/angular-route/angular-route.min.js',
-    '/base/node_modules/postal/lib/postal.min.js',
-    '/base/node_modules/jquery/dist/jquery.min.js'
-];
-
-
 requirejs.config({
-    // Karma serves files from '/base'
     baseUrl: '/base/app',
     map: {
         "*": {
             'lodash': '/base/node_modules/postal/node_modules/lodash/dist/lodash.min.js',
-            'conduitjs': '/base/node_modules/postal/node_modules/conduitjs/lib/conduit.min.js'
+            'conduitjs': '/base/node_modules/postal/node_modules/conduitjs/lib/conduit.min.js',
+            'angular-route': '/base/node_modules/angular-route/angular-route.min.js',
+            'angular': '/base/node_modules/angular/angular.min.js',
+            'jquery': '/base/node_modules/jquery/dist/jquery.min.js',
+            'postal': '/base/node_modules/postal/lib/postal.min.js',
+            'q': '/base/node_modules/q/q.js',
+            'functional-option': '/base/framework/Option.js',
+            'framework': '/base/framework/ApplicationFactory.js'
         }
-    }
+    },
+
+    'shim': {
+        'angular': {
+            exports: 'angular'
+        },
+
+        'angular-route': {
+            deps: [ 'angular' ],
+            exports: 'angular-route'
+        },
+
+        'jquery': {
+            exports: '$'
+        },
+
+        'functional-option': {
+            exports: ['None', 'Some', 'throwException', 'Option']
+        },
+
+        'framework': {
+            deps: ['angular', 'functional-option'],
+            exports: 'ApplicationFactory'
+        },
+
+        'main': {
+            deps: ['framework'],
+            exports: 'main'
+        }
+    },
+
+    deps: ['framework', 'functional-option', 'angular', 'angular-route', 'jquery', 'q', 'postal', 'main'],
+
+    callback: test_main
 });
+
+function test_main() {
+    // initialize the base application
+    main();
+    require(app.manifest.src, function () {
+        require(tests, window.__karma__.start);
+    });
+}
 
 /**
  * Function.prototype.bind polyfill
@@ -66,13 +96,3 @@ if (!Function.prototype.bind) {
     };
 }
 /*************************************/
-
-require(libs, function () {
-    require(base, function () {
-        require(manifest, function () {
-            require(app.manifest.src, function () {
-                require(tests, window.__karma__.start);
-            });
-        });
-    });
-});
