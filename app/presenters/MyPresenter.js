@@ -9,15 +9,13 @@ app.registerPresenter(function (container) {
     MyPresenter.prototype.show = function (view, model) {
         view.event.onLoad = function () {
             model.getModelById(view.data.currentId)
-                .done(view.showModel.bind(view))
-                .fail(view.showError.bind(view));
+                .then(view.showModel.bind(view), view.showError.bind(view));
         }.bind(this);
 
         view.event.onChangeModel = function (nextModelId) {
             this.currentId = nextModelId;
             model.getModelById(view.data.currentId)
-                .done(view.showModel.bind(view))
-                .fail(view.showError.bind(view));
+                .then(view.showModel.bind(view), view.showError.bind(view));
         }.bind(this);
     };
 

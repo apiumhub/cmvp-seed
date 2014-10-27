@@ -35,7 +35,7 @@ app.registerView(function (container) {
 
     MyView.prototype.showError = function (error) {
         this.data.currentModel = null;
-        this.data.currentError = error;
+        this.data.currentError = error.responseText;
     };
 
     MyView.newInstance = function ($scope, $model, $presenter, $weaved) {

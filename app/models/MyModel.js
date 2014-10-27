@@ -2,6 +2,8 @@
  * Created by kevin on 10/22/14.
  */
 app.registerModel(function (container) {
+    var AjaxService = container.getService('services/AjaxService');
+
     function MyModel() {
 
     }
@@ -11,7 +13,7 @@ app.registerModel(function (container) {
             throw new Error("Validation error!");
         }
 
-        return $.getJSON('http://localhost/json/' + id + ".json");
+        return AjaxService.ajax({url: "http://localhost/json/" + id + ".json"});
     };
 
     MyModel.newInstance = function () {
