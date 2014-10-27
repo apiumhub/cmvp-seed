@@ -17,7 +17,7 @@ app.registerModel(function (container) {
     };
 
     MyModel.newInstance = function (ajax) {
-        var ajaxService = ajax || AjaxService;
+        var ajaxService = ajax || new AjaxService();
         return Some(new MyModel(ajaxService));
     };
 

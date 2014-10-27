@@ -4,13 +4,14 @@
 
 describe("MyModel", function () {
     var MyModel = app.getModel('models/MyModel');
+    var AjaxService = app.getService('services/AjaxService');
 
     function exerciseNewModel(ajaxService) {
         return MyModel.newInstance(ajaxService).getOrElse(throwException("Could not create MyModel!!!"));
     }
 
     function exerciseOKAjaxService() {
-        var service = { ajax: function () {} };
+        var service = new AjaxService();
         var expectedValue = {text: "Some Value"};
 
         var serviceMock = sinon.mock(service);
@@ -20,7 +21,7 @@ describe("MyModel", function () {
     }
 
     function exerciseFailAjaxService() {
-        var service = { ajax: function () {} };
+        var service = new AjaxService();
         var expectedValue = "some error";
 
         var serviceMock = sinon.mock(service);

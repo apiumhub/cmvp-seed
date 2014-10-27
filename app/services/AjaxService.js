@@ -4,9 +4,13 @@
 app.registerService(function (container) {
     var Q = container.getFunction('q');
 
-    return {
-        ajax: function (params) {
-            return Q($.ajax(params));
-        }
+    function AjaxService() {
+
+    }
+
+    AjaxService.prototype.ajax = function (params) {
+        return Q($.ajax(params));
     };
+
+    return AjaxService;
 });
