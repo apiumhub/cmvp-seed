@@ -21,6 +21,13 @@ app.manifest = {
         'Configuration',
         'services/EventBus',
         'controllers/MyController', 'views/MyView', 'presenters/MyPresenter', 'models/MyModel'
+    ],
+
+    deps: [
+        'angular',
+        'jquery',
+        'q',
+        'postal'
     ]
 };
 
@@ -29,6 +36,7 @@ app.registerObject({name: 'SourceList', dependencies: app.manifest.src}, functio
     return app.manifest.src;
 });
 
-app.registerObject({name: "Application", dependencies: ["SourceList"]}, function () {
-   return app;
+app.registerObject({name: "Application", dependencies: ["SourceList"].concat(app.manifest.deps)}, function () {
+    app.initialize();
+    return app;
 });
