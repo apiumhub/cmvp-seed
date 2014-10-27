@@ -3,7 +3,7 @@
  */
 
 describe("EventBus", function () {
-    var EventBus = app.get('services/EventBus').getInstance();
+    var EventBus = app.getService('services/EventBus').getInstance();
 
     it("should respond to events in a subscribed channel", function () {
         var S = EventBus.subscribe({channel: "A", topic: "B", callback: function (data) {

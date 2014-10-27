@@ -46,7 +46,8 @@
         var impl = obj || {};
 
         impl.getFunction = impl.getObject;
-        impl.getView = impl.getController = impl.getPresenter = impl.getModel = function (name) {
+        impl.getView = impl.getController = impl.getPresenter = impl.getModel =
+        impl.getService = function (name) {
             var x = impl.getObject(name);
             if (!x) {
                 throw new Error("Could not find object: " + name);
@@ -64,8 +65,10 @@
 
     function applySetsTo(obj) {
         var impl = obj || {};
+
+        impl.registerFunction = impl.registerObject;
         impl.registerView = impl.registerController = impl.registerPresenter = impl.registerModel =
-        impl.register = function (cfg, factory) {
+        impl.registerService = impl.register = function (cfg, factory) {
             if (factory == null) {
                 ensureFunction(cfg, "factory");
                 impl.registerObject({}, cfg);

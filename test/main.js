@@ -63,6 +63,7 @@ requirejs.config({
 function test_main() {
     // initialize the base application
     main();
+    // run tests
     require(app.manifest.src, function () {
         require(tests, window.__karma__.start);
     });
