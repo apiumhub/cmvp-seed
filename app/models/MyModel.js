@@ -4,8 +4,8 @@
 app.registerModel(function (container) {
     var AjaxService = container.getService('services/AjaxService');
 
-    function MyModel() {
-
+    function MyModel($ajaxService) {
+        this.$ajaxService = $ajaxService;
     }
 
     MyModel.prototype.getModelById = function (id) {
@@ -13,11 +13,12 @@ app.registerModel(function (container) {
             throw new Error("Validation error!");
         }
 
-        return AjaxService.ajax({url: "http://localhost/json/" + id + ".json"});
+        return this.$ajaxService.ajax({url: "http://localhost/json/" + id + ".json"});
     };
 
-    MyModel.newInstance = function () {
-        return Some(new MyModel());
+    MyModel.newInstance = function (ajax) {
+        var ajaxService = ajax || AjaxService;
+        return Some(new MyModel(ajaxService));
     };
 
     return MyModel;

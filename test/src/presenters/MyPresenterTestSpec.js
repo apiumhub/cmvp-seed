@@ -26,26 +26,6 @@ describe("MyPresenter", function () {
         onView.event.onChangeModel(1);
     }
 
-    function fakePromise(doneValue, errorValue) {
-        var self = {
-            done: function (x) {
-                if (doneValue) {
-                    x(doneValue);
-                    return self;
-                }
-            },
-
-            fail: function (x) {
-                if (errorValue) {
-                    x(errorValue);
-                    return self;
-                }
-            }
-        };
-
-        return self;
-    }
-
     it("should call showModel when getModelById returns a valid value", function () {
         var context = exerciseCreateValidPresenter();
         exerciseOnChangeModel(context.view);

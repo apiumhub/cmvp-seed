@@ -17,7 +17,7 @@ describe("MyView", function () {
     }
 
     function exerciseShowError(view) {
-        view.showError("some error");
+        view.showError({ responseText: "some error" });
         return "some error";
     }
 

@@ -93,3 +93,21 @@ if (!Function.prototype.bind) {
     };
 }
 /*************************************/
+
+function fakePromise(doneValue, errorValue) {
+    var self = {
+        then: function (onOk, onFail) {
+            if (doneValue) {
+                onOk(doneValue);
+                return self;
+            }
+
+            if (errorValue) {
+                onFail(errorValue);
+                return self;
+            }
+        }
+    };
+
+    return self;
+}
