@@ -1,8 +1,16 @@
 <div ng-controller="MyController" ng-init="event.onLoad()">
     <span>Controller is {{ data.loaded }}</span>
     <h1>{{title}}</h1>
-    <label for="currentId">Current Model Id</label>
-    <input id="currentId" type="text" ng-change="event.onChangeModel(data.currentId)" ng-model="data.currentId" /><br />
+    <table>
+        <tr>
+            <td><div ng-include="'/templates/tomatoView.html'"></div></td>
+            <td>
+                <label for="currentId">Current Model Id</label>
+                <input id="currentId" type="text" ng-change="event.onChangeModel(data.currentId)" ng-model="data.currentId" /><br />
+            </td>
+        </tr>
+    </table>
+    <hr />
     <div>
         {{ data.currentModel.text }}
     </div>
@@ -10,6 +18,4 @@
         {{ data.currentError }}
     </div>
     <hr />
-    <h1>Tomato:</h1>
-    <div ng-include="'/templates/tomatoView.html'"></div>
 </div>
