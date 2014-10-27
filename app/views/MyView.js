@@ -6,7 +6,7 @@ app.registerView(function (container) {
     var MyPresenter = container.getPresenter('presenters/MyPresenter');
     var MyModel = container.getModel('models/MyModel');
     var Configuration = container.getObject('Configuration');
-    var ViewRepaintAspect = container.getObject('aspects/ViewRepaintAspect');
+    var ViewRepaintAspect = container.getService('aspects/ViewRepaintAspect');
 
     function MyView($scope, model, presenter) {
         this.data = {};
@@ -44,9 +44,8 @@ app.registerView(function (container) {
         var presenter = $presenter || MyPresenter.newInstance().getOrElse(throwException("MyPresenter could not be instantiated!!"));
 
         var view = new MyView(scope, model, presenter);
-        var aspect = new ViewRepaintAspect();
 
-        aspect.weave(view);
+        ViewRepaintAspect.weave(view);
         return Some(view);
     };
 
