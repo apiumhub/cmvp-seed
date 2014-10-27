@@ -38,7 +38,7 @@ app.registerView(function (container) {
         this.data.currentError = error.responseText;
     };
 
-    MyView.newInstance = function ($scope, $model, $presenter, $weaved) {
+    MyView.newInstance = function ($scope, $model, $presenter) {
         var scope = $scope || {};
         var model = $model || MyModel.newInstance().getOrElse(throwException("MyModel could not be instantiated!!"));
         var presenter = $presenter || MyPresenter.newInstance().getOrElse(throwException("MyPresenter could not be instantiated!!"));
