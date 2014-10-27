@@ -24,7 +24,7 @@ function main() {
             'Configuration',
             'services/EventBus', 'services/AjaxService', 'aspects/ViewRepaintAspect',
             'controllers/MyController', 'views/MyView', 'presenters/MyPresenter', 'models/MyModel',
-            'controllers/TomatoController', 'views/TomatoView'
+            'controllers/TomatoController', 'views/TomatoView', 'presenters/TomatoPresenter'
         ]
     };
 
