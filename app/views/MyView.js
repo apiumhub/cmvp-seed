@@ -3,12 +3,12 @@
  */
 
 app.registerView(function (container) {
+    var EventBus = container.getService('services/EventBus');
     var MyPresenter = container.getPresenter('presenters/MyPresenter');
     var MyModel = container.getModel('models/MyModel');
-    var Configuration = container.getObject('Configuration');
     var ViewRepaintAspect = container.getService('aspects/ViewRepaintAspect');
 
-    function MyView($scope, model, presenter) {
+    function MyView($scope, model, presenter, eventBus) {
         this.data = {};
         this.event = {};
         this.$scope = $scope;
@@ -22,6 +22,7 @@ app.registerView(function (container) {
 
         this.model = model;
         this.presenter = presenter;
+        this.eventBus = eventBus;
     }
 
     MyView.prototype.show = function () {
@@ -29,21 +30,24 @@ app.registerView(function (container) {
     };
 
     MyView.prototype.showModel = function (model) {
+        this.eventBus.publish({channel: "TomatoView", topic: "updateTomato", data: "green"});
         this.data.currentModel = model;
         this.data.currentError = null;
     };
 
     MyView.prototype.showError = function (error) {
+        this.eventBus.publish({channel: "TomatoView", topic: "updateTomato", data: "red"});
         this.data.currentModel = null;
         this.data.currentError = error.responseText;
     };
 
-    MyView.newInstance = function ($scope, $model, $presenter) {
+    MyView.newInstance = function ($scope, $model, $presenter, $eventBus) {
         var scope = $scope || {};
         var model = $model || MyModel.newInstance().getOrElse(throwException("MyModel could not be instantiated!!"));
         var presenter = $presenter || MyPresenter.newInstance().getOrElse(throwException("MyPresenter could not be instantiated!!"));
+        var eventBus = $eventBus || EventBus.getInstance();
 
-        var view = new MyView(scope, model, presenter);
+        var view = new MyView(scope, model, presenter, eventBus);
 
         ViewRepaintAspect.weave(view);
         return Some(view);
