@@ -1,7 +1,7 @@
 /**
  * Created by kevin on 10/27/14.
  */
-app.register(function (container) {
+app.registerService(function (container) {
     var meld = container.getFunction('meld');
 
     return {

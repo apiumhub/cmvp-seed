@@ -7,8 +7,8 @@ var app = null;
 function main() {
     /** AngularJS App Configuration **/
     function AngularConfig($routeProvider) {
-        $routeProvider.when("/model/:modelId", {templateUrl: '/templates/main.html', controller: 'MyController'})
-            .otherwise({templateUrl: '/templates/main.html', controller: 'MyController'});
+        $routeProvider.when("/model/:modelId", {templateUrl: '/templates/myView.html', controller: 'MyController'})
+            .otherwise({templateUrl: '/templates/myView.html', controller: 'MyController'});
     }
 
     AngularConfig.$inject = [ '$routeProvider' ];
