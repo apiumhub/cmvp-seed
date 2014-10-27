@@ -33,12 +33,12 @@ app.registerView(function (container) {
         this.data.currentError = null;
     };
 
-    MyView.prototype.showError = function () {
+    MyView.prototype.showError = function (error) {
         this.data.currentModel = null;
-        this.data.currentError = "Some error";
+        this.data.currentError = error;
     };
 
-    MyView.newInstance = function ($scope, $model, $presenter) {
+    MyView.newInstance = function ($scope, $model, $presenter, $weaved) {
         var scope = $scope || {};
         var model = $model || MyModel.newInstance().getOrElse(throwException("MyModel could not be instantiated!!"));
         var presenter = $presenter || MyPresenter.newInstance().getOrElse(throwException("MyPresenter could not be instantiated!!"));

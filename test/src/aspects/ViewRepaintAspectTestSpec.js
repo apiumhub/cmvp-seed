@@ -8,13 +8,23 @@ describe('ViewRepaintAspect', function () {
         return {$scope: {$apply: $applyFunction}};
     }
 
-    it("should call the $apply function after running some method", function () {
-        var spy = sinon.spy();
+    it("should call the $apply function after running some public method", function () {
+        var spy = jasmine.createSpy();
         var view = exerciseCreateView(spy);
         view.publicMethod = function () {};
         ViewRepaintAspect.weave(view);
         view.publicMethod();
 
-        expect(spy.called).toBe(true);
+        expect(spy).toHaveBeenCalled();
+    });
+
+    it("should not call the $apply function after running some private method", function () {
+        var spy = jasmine.createSpy();
+        var view = exerciseCreateView(spy);
+        view._privateMethod = function () {};
+        ViewRepaintAspect.weave(view);
+        view._privateMethod();
+
+        expect(spy).not.toHaveBeenCalled();
     });
 });
