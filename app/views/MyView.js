@@ -16,10 +16,6 @@ app.registerView(function (container) {
         $scope.data = this.data;
         $scope.event = this.event;
 
-        this.data.loaded = true;
-        this.data.currentModel = null;
-        this.data.currentError = "";
-
         this.model = model;
         this.presenter = presenter;
         this.eventBus = eventBus;
@@ -38,7 +34,7 @@ app.registerView(function (container) {
     MyView.prototype.showError = function (error) {
         this.eventBus.publish({channel: "TomatoView", topic: "updateTomato", data: "red"});
         this.data.currentModel = null;
-        this.data.currentError = error.responseText;
+        this.data.currentError = error.responseText.substr(0, Math.min(error.responseText.length, 128));
     };
 
     MyView.newInstance = function ($scope, $model, $presenter, $eventBus) {

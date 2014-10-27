@@ -1,21 +1,17 @@
 <div ng-controller="MyController" ng-init="event.onLoad()">
-    <span>Controller is {{ data.loaded }}</span>
-    <h1>{{title}}</h1>
+    <label for="currentId">Current Model Id</label>
+    <input id="currentId" type="text" ng-change="event.onChangeModel(data.currentId)" ng-model="data.currentId" /><br />
     <table>
         <tr>
             <td><div ng-include="'/templates/tomatoView.html'"></div></td>
-            <td>
-                <label for="currentId">Current Model Id</label>
-                <input id="currentId" type="text" ng-change="event.onChangeModel(data.currentId)" ng-model="data.currentId" /><br />
+            <td style="border-left: 1px solid gray; padding-left: 15px;">
+                <div>
+                    {{ data.currentModel.text }}
+                </div>
+                <div style="color: red">
+                    {{ data.currentError }}
+                </div>
             </td>
         </tr>
     </table>
-    <hr />
-    <div>
-        {{ data.currentModel.text }}
-    </div>
-    <div style="color: red">
-        {{ data.currentError }}
-    </div>
-    <hr />
 </div>
