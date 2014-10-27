@@ -18,11 +18,11 @@ function main() {
         .composedWith(ApplicationFactory.newAngularApplication('AngularApp', [ 'ngRoute' ], AngularConfig));
 
     app.manifest = {
-        authors: [ 'Apium' ],
+        authors: [ 'apium tech' ],
         version: 0.1,
         src: [
             'Configuration',
-            'services/EventBus', 'services/RichViewWeaver',
+            'services/EventBus', 'aspects/ViewRepaintAspect',
             'controllers/MyController', 'views/MyView', 'presenters/MyPresenter', 'models/MyModel'
         ]
     };
