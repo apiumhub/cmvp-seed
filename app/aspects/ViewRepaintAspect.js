@@ -6,7 +6,7 @@ app.registerService(function (container) {
 
     return {
         weave: function (view) {
-            meld.after(view, /^[^_].+/, function () {
+            meld.after(view, /^[a-z].+/, function () {
                 if (view.$scope.$apply) {
                     // ignore the error, it's always an 'already in progress error' which doesn't harm.
                     view.$scope.$apply();

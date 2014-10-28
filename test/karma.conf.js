@@ -9,6 +9,7 @@ module.exports = function(config) {
         // list of files / patterns to load in the browser
         files: [
             {pattern: 'node_modules/**/*.js', included: false},
+            {pattern: 'node_modules/sinon/pkg/sinon*.js', included: true},
             {pattern: 'framework/**/*.js', included: false},
             {pattern: 'app/**/*.js', included: false},
             {pattern: 'test/src/**/*.js', included: false},
