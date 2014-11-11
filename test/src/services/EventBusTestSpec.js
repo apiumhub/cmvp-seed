@@ -16,13 +16,13 @@ describe("EventBus", function () {
     });
 
     it("should not catch events on different subscriptions", function () {
-       var S = EventBus.subscribe({channel: "A", topic: "A", callback: function (data) {
-           expect(true).toEqual(true);
-       }});
+        var S = EventBus.subscribe({channel: "A", topic: "A", callback: function (data) {
+            expect(true).toEqual(true);
+        }});
 
-       var NotS = EventBus.subscribe({channel: "B", topic: "B", callback: function (data) {
-           expect(false).toEqual(true);
-       }});
+        var NotS = EventBus.subscribe({channel: "B", topic: "B", callback: function (data) {
+            expect(false).toEqual(true);
+        }});
 
         EventBus.publish({channel: "A", topic: "A", data: "AAA!!!"});
 
@@ -30,4 +30,5 @@ describe("EventBus", function () {
         NotS.unsubscribe();
     });
 });
+
 

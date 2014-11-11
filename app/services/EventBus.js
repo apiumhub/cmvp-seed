@@ -20,6 +20,19 @@ app.register(function (container) {
         postal.publish(parameters);
     };
 
+    EventBus.prototype.createChannel = function (channel, topic) {
+        return {
+            send: function (msg) {
+                instance.publish({ channel: channel, topic: topic, data: msg });
+                return msg;
+            },
+
+            listen: function (callback) {
+                instance.subscribe({ channel: channel, topic: topic, callback: callback });
+            }
+        };
+    };
+
     var instance = new EventBus();
     return { getInstance: function () { return instance; }};
 });
