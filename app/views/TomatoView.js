@@ -14,15 +14,14 @@ app.registerView(function (container) {
         $scope.event = this.event;
 
         this.presenter = $tomatoPresenter;
+        this.setStatus('default');
     }
 
     TomatoView.prototype.show = function () {
-        this.setStatus('default');
         this.presenter.show(this);
     };
 
     TomatoView.prototype.setStatus = function (status) {
-        console.log(status);
         this.data.status = status;
     };
 
