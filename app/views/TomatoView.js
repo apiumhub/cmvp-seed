@@ -4,9 +4,8 @@
 app.registerView(function (container) {
     var ViewRepaintAspect = container.getService('aspects/ViewRepaintAspect');
     var TomatoPresenter = container.getPresenter('presenters/TomatoPresenter');
-    var EventBus = container.getService('services/EventBus');
 
-    function TomatoView($scope, $tomatoPresenter, $eventBus) {
+    function TomatoView($scope, $tomatoPresenter) {
         this.data = {};
         this.event = {};
         this.$scope = $scope;
@@ -15,27 +14,23 @@ app.registerView(function (container) {
         $scope.event = this.event;
 
         this.presenter = $tomatoPresenter;
-
-        $eventBus.subscribe({channel: "TomatoView", topic: "updateTomato", callback: function (color) {
-            this.setColor(color);
-        }.bind(this)});
     }
 
     TomatoView.prototype.show = function () {
-        this.setColor('orange');
+        this.setStatus('default');
         this.presenter.show(this);
     };
 
-    TomatoView.prototype.setColor = function (color) {
-        this.data.tomatoStyle = "width: 30px; height: 30px; border-radius: 60px; background-color: " + color;
+    TomatoView.prototype.setStatus = function (status) {
+        console.log(status);
+        this.data.status = status;
     };
 
-    TomatoView.newInstance = function ($scope, $tomatoPresenter, $eventBus) {
+    TomatoView.newInstance = function ($scope, $tomatoPresenter) {
         var scope = $scope || {};
         var tomatoPresenter = $tomatoPresenter || TomatoPresenter.newInstance().getOrElse(throwException("Could not instantiate TomatoPresenter!!"));
-        var eventBus = $eventBus || EventBus.getInstance();
 
-        var view = new TomatoView(scope, tomatoPresenter, eventBus);
+        var view = new TomatoView(scope, tomatoPresenter);
         ViewRepaintAspect.weave(view);
         return Some(view);
     };

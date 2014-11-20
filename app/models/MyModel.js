@@ -13,7 +13,7 @@ app.registerModel(function (container) {
             throw new Error("Validation error!");
         }
 
-        return this.$ajaxService.ajax({url: "http://localhost/json/" + id + ".json"});
+        return this.$ajaxService.ajax({url: "/json/" + id + ".json"});
     };
 
     MyModel.newInstance = function (ajax) {

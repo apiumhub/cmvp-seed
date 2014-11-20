@@ -1,5 +1,5 @@
 <div ng-controller="TomatoController">
-    <div style="{{ data.tomatoStyle }}; cursor: pointer;" ng-click="event.onClickTomato()">
+    <div ng-class="{ 'semaphore-ok': data.status == 'ok', 'semaphore-fail': data.status == 'fail', 'semaphore-default': true }" ng-click="event.onClickTomato()">
         &nbsp;
     </div>
 </div>

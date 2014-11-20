@@ -3,7 +3,10 @@
  */
 
 app.registerPresenter(function (container) {
-    function MyPresenter() {
+    var EventBus = container.getService('services/EventBus');
+
+    function MyPresenter($eventBus) {
+        this.eventBus = $eventBus;
     }
 
     MyPresenter.prototype.show = function (view, model) {
@@ -15,12 +18,21 @@ app.registerPresenter(function (container) {
         view.event.onChangeModel = function (nextModelId) {
             this.currentId = nextModelId;
             model.getModelById(view.data.currentId)
+                .then(this.publishModelStatus("ok"), this.publishModelStatus("fail"))
                 .then(view.showModel.bind(view), view.showError.bind(view));
         }.bind(this);
     };
 
-    MyPresenter.newInstance = function () {
-        return Some(new MyPresenter());
+    MyPresenter.prototype.publishModelStatus = function (status) {
+        return function (model) {
+            this.eventBus.publish({channel: "TomatoView", topic: "updateTomato", data: status });
+            return model;
+        }.bind(this);
+    };
+
+    MyPresenter.newInstance = function ($eventBus) {
+        var eventBus =  $eventBus || EventBus.getInstance();
+        return Some(new MyPresenter(eventBus));
     };
 
     return MyPresenter;
