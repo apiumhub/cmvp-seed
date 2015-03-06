@@ -5,6 +5,7 @@
 describe("MyModel", function () {
     var MyModel = app.getModel('models/MyModel');
     var AjaxService = app.getService('services/AjaxService');
+    var sinon = app.getService('sinon');
 
     function exerciseNewModel(ajaxService) {
         return MyModel.newInstance(ajaxService).getOrElse(throwException("Could not create MyModel!!!"));

@@ -3,6 +3,7 @@
  */
 describe("MyPresenter", function () {
     var MyPresenter = app.getPresenter("presenters/MyPresenter").newInstance().getOrElse(throwException("Could not create a basic MyPresenter!"));
+    var sinon = app.getService('sinon');
 
     function exerciseCreateValidPresenter() {
         var showModelSpy = jasmine.createSpy("showModel");
