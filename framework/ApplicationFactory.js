@@ -25,61 +25,6 @@
  **/
 
 (function (jsScope) {
-    function isFunction(func) {
-        return Object.prototype.toString.call(func) == '[object Function]';
-    }
-
-    function ensureFunction(func, paramName) {
-        if (!isFunction(func)) {
-            throw new Error(paramName + " must be a function.");
-        }
-        return true;
-    }
-    
-    function errFun(msg) {
-        return function () {
-            throw new Error(msg)
-        };
-    }
-
-    function applyGetsTo(obj) {
-        var impl = obj || {};
-
-        impl.getFunction = impl.getObject;
-        impl.getView = impl.getController = impl.getPresenter = impl.getModel =
-        impl.getService = function (name) {
-            var x = impl.getObject(name);
-            if (!x) {
-                throw new Error("Could not find object: " + name);
-            }
-
-            if (isFunction(x)) {
-                return x();
-            } else {
-                return x;
-            }
-        };
-
-        return impl;
-    }
-
-    function applySetsTo(obj) {
-        var impl = obj || {};
-
-        impl.registerFunction = impl.registerObject;
-        impl.registerView = impl.registerController = impl.registerPresenter = impl.registerModel =
-        impl.registerService = impl.register = function (cfg, factory) {
-            if (factory == null) {
-                ensureFunction(cfg, "factory");
-                impl.registerObject({}, cfg);
-            } else {
-                ensureFunction(factory, "factory");
-                impl.registerObject(cfg, factory);
-            }
-        };
-
-        return impl;
-    }
 
     jsScope.ApplicationFactory = {
         newApplication: function (name, impl) {
@@ -126,41 +71,40 @@
         },
 
         newRequireApplication: function (name, config) {
-            // check if we have require loaded
-            if (ensureFunction(jsScope.define) && ensureFunction(jsScope.require)) {
-                if (config) {
-                    jsScope.requirejs.config(config);
-                }
-                var impl = {type: 'require'};
-                impl.registerObject = function (configuration, factory) {
-                    var cfg = configuration || {};
-                    if (cfg.name != null && cfg.dependencies != null) {
-                        jsScope.define(cfg.name, cfg.dependencies, factory);
-                    } else if (cfg.name != null && cfg.dependencies == null) {
-                        jsScope.define(cfg.name, [ ], function (require) {
-                            return factory.bind(require, applyGetsTo({require: require, getObject: require, registerObject: errFun("Parameter is a read-only context") }));
-                        });
-                    } else {
-                        jsScope.define(function (require) {
-                            return factory.bind(require, applyGetsTo({require: require, getObject: require, registerObject: errFun("Parameter is a read-only context") }));
-                        });
-                    }
-                };
+            ensureFunction(jsScope.define);
+            ensureFunction(jsScope.require);
 
-                impl.getObject = function (name) {
-                    try {
-                        return jsScope.require(name);
-                    } catch (e) {
-                        console.log(e);
-                        return null;
-                    }
-                };
-
-                impl.initialize = function () {};
-
-                return jsScope.ApplicationFactory.newApplication(name, impl);
+            if (config) {
+                jsScope.requirejs.config(config);
             }
-            throw new Error("RequireJS is not loaded! (require must be injected into the provided jsScope)")
+            var impl = {type: 'require'};
+            impl.registerObject = function (configuration, factory) {
+                var cfg = configuration || {};
+                if (cfg.name != null && cfg.dependencies != null) {
+                    jsScope.define(cfg.name, cfg.dependencies, factory);
+                } else if (cfg.name != null && cfg.dependencies == null) {
+                    jsScope.define(cfg.name, [ ], function (require) {
+                        return factory.bind(require, applyGetsTo({require: require, getObject: require, registerObject: errFun("Parameter is a read-only context") }));
+                    });
+                } else {
+                    jsScope.define(function (require) {
+                        return factory.bind(require, applyGetsTo({require: require, getObject: require, registerObject: errFun("Parameter is a read-only context") }));
+                    });
+                }
+            };
+
+            impl.getObject = function (name) {
+                try {
+                    return jsScope.require(name);
+                } catch (e) {
+                    console.log(e);
+                    return null;
+                }
+            };
+
+            impl.initialize = function () {};
+
+            return jsScope.ApplicationFactory.newApplication(name, impl);
         },
 
         newAngularApplication: function (name, modules, config) {
@@ -202,4 +146,61 @@
             return jsScope.ApplicationFactory.newApplication(name, impl);
         }
     };
+
+    function isFunction(func) {
+        return Object.prototype.toString.call(func) == '[object Function]';
+    }
+
+    function ensureFunction(func, paramName) {
+        if (!isFunction(func)) {
+            throw new Error(paramName + " must be a function.");
+        }
+        return true;
+    }
+
+    function errFun(msg) {
+        return function () {
+            throw new Error(msg)
+        };
+    }
+
+    function applyGetsTo(obj) {
+        var impl = obj || {};
+
+        impl.getFunction = impl.getObject;
+        impl.getView = impl.getController = impl.getPresenter = impl.getModel =
+            impl.getService = function (name) {
+                var x = impl.getObject(name);
+                if (!x) {
+                    throw new Error("Could not find object: " + name);
+                }
+
+                if (isFunction(x)) {
+                    return x();
+                } else {
+                    return x;
+                }
+            };
+
+        return impl;
+    }
+
+    function applySetsTo(obj) {
+        var impl = obj || {};
+
+        impl.registerFunction = impl.registerObject;
+        impl.registerView = impl.registerController = impl.registerPresenter = impl.registerModel =
+            impl.registerService = impl.register = function (cfg, factory) {
+                if (factory == null) {
+                    ensureFunction(cfg, "factory");
+                    impl.registerObject({}, cfg);
+                } else {
+                    ensureFunction(factory, "factory");
+                    impl.registerObject(cfg, factory);
+                }
+            };
+
+        return impl;
+    }
+
 })(window);
