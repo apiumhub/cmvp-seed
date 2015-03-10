@@ -9,18 +9,39 @@ module.exports = function(config) {
         // list of files / patterns to load in the browser
         files: [
             {pattern: 'node_modules/**/*.js', included: false},
+            {pattern: 'locales/**/*.json', included: false},
+            {pattern: 'vendor/**/*.js', included: false},
             {pattern: 'node_modules/sinon/pkg/sinon*.js', included: true},
             {pattern: 'framework/**/*.js', included: false},
             {pattern: 'app/**/*.js', included: false},
+            {pattern: 'test/helpers.js', included: true},
+            {pattern: 'test/helpers/**/*.js', included: true},
             {pattern: 'test/src/**/*.js', included: false},
+
             /** Load Tests **/
             'test/main.js'
-
         ],
         // use dots reporter, as travis terminal does not support escaping sequences
         // possible values: 'dots', 'progress', 'junit', 'teamcity'
         // CLI --reporters progress
-        reporters: ['progress'],
+        reporters: ['progress', 'junit', 'coverage'],
+
+        junitReporter: {
+            outputFile: 'reports/test-results.xml',
+            suite: ''
+        },
+
+        preprocessors: {
+            'app/**/*.js': 'coverage',
+            'framework/**/*.js': 'coverage'
+        },
+
+        coverageReporter: {
+            type: 'lcovonly',
+            dir: 'reports/',
+            file: 'lconv.info'
+        },
+
 
         port: 9876,
 
@@ -49,8 +70,8 @@ module.exports = function(config) {
 
         singleRun: false,
 
-        // report which specs are slower than 500ms
+        // report which specs are slower than 10ms
         // CLI --report-slower-than 500
         reportSlowerThan: 500
     })
-}
+};

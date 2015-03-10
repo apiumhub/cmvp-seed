@@ -43,7 +43,7 @@
         },
         "findup-sync": {
           "version": "0.1.3",
-          "from": "findup-sync@>=0.1.0 <0.2.0",
+          "from": "findup-sync@>=0.1.2 <0.2.0",
           "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/findup-sync/-/findup-sync-0.1.3.tgz",
           "dependencies": {
             "glob": {
@@ -140,7 +140,7 @@
         },
         "rimraf": {
           "version": "2.2.8",
-          "from": "rimraf@>=2.2.5 <2.3.0",
+          "from": "rimraf@>=2.2.8 <2.3.0",
           "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/rimraf/-/rimraf-2.2.8.tgz"
         },
         "lodash": {
@@ -189,7 +189,7 @@
         },
         "exit": {
           "version": "0.1.2",
-          "from": "exit@>=0.1.1 <0.2.0",
+          "from": "exit@>=0.1.2 <0.2.0",
           "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/exit/-/exit-0.1.2.tgz"
         },
         "getobject": {
@@ -240,12 +240,12 @@
         },
         "findup-sync": {
           "version": "0.1.3",
-          "from": "findup-sync@>=0.1.0 <0.2.0",
+          "from": "findup-sync@>=0.1.2 <0.2.0",
           "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/findup-sync/-/findup-sync-0.1.3.tgz",
           "dependencies": {
             "glob": {
               "version": "3.2.11",
-              "from": "glob@>=3.2.11 <4.0.0",
+              "from": "glob@>=3.2.7 <3.3.0",
               "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/glob/-/glob-3.2.11.tgz",
               "dependencies": {
                 "inherits": {
@@ -375,7 +375,7 @@
             },
             "exit": {
               "version": "0.1.2",
-              "from": "exit@>=0.1.0 <0.2.0",
+              "from": "exit@>=0.1.2 <0.2.0",
               "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/exit/-/exit-0.1.2.tgz"
             },
             "htmlparser2": {
@@ -494,7 +494,7 @@
       "dependencies": {
         "async": {
           "version": "0.2.10",
-          "from": "async@>=0.2.10 <0.3.0",
+          "from": "async@>=0.2.9 <0.3.0",
           "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/async/-/async-0.2.10.tgz"
         },
         "chalk": {
@@ -721,7 +721,7 @@
             },
             "source-map": {
               "version": "0.1.43",
-              "from": "source-map@>=0.1.31 <0.2.0",
+              "from": "source-map@>=0.1.0 <0.2.0",
               "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/source-map/-/source-map-0.1.43.tgz",
               "dependencies": {
                 "amdefine": {
@@ -765,7 +765,7 @@
                     },
                     "readable-stream": {
                       "version": "1.1.13",
-                      "from": "readable-stream@>=1.1.9 <1.2.0",
+                      "from": "readable-stream@>=1.1.0 <1.2.0",
                       "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/readable-stream/-/readable-stream-1.1.13.tgz",
                       "dependencies": {
                         "core-util-is": {
@@ -967,7 +967,7 @@
         },
         "async": {
           "version": "0.2.10",
-          "from": "async@>=0.2.10 <0.3.0",
+          "from": "async@>=0.2.9 <0.3.0",
           "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/async/-/async-0.2.10.tgz"
         }
       }
@@ -1058,9 +1058,9 @@
           }
         },
         "lodash": {
-          "version": "3.3.1",
+          "version": "3.5.0",
           "from": "lodash@>=1.3.0",
-          "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/lodash/-/lodash-3.3.1.tgz"
+          "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/lodash/-/lodash-3.5.0.tgz"
         }
       }
     },
@@ -1083,12 +1083,12 @@
       "dependencies": {
         "exit": {
           "version": "0.1.2",
-          "from": "exit@>=0.1.1 <0.2.0",
+          "from": "exit@>=0.1.2 <0.2.0",
           "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/exit/-/exit-0.1.2.tgz"
         },
         "glob": {
           "version": "3.2.11",
-          "from": "glob@>=3.2.11 <4.0.0",
+          "from": "glob@>=3.2.7 <3.3.0",
           "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/glob/-/glob-3.2.11.tgz",
           "dependencies": {
             "inherits": {
@@ -1227,7 +1227,7 @@
               "dependencies": {
                 "readable-stream": {
                   "version": "1.0.33",
-                  "from": "readable-stream@>=1.0.2 <1.1.0",
+                  "from": "readable-stream@>=1.0.26-2 <1.1.0",
                   "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/readable-stream/-/readable-stream-1.0.33.tgz",
                   "dependencies": {
                     "core-util-is": {
@@ -1263,7 +1263,7 @@
         },
         "glob": {
           "version": "3.2.11",
-          "from": "glob@>=3.2.11 <4.0.0",
+          "from": "glob@>=3.2.7 <3.3.0",
           "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/glob/-/glob-3.2.11.tgz",
           "dependencies": {
             "inherits": {
@@ -1377,7 +1377,7 @@
         },
         "rimraf": {
           "version": "2.2.8",
-          "from": "rimraf@>=2.2.5 <2.3.0",
+          "from": "rimraf@>=2.2.8 <2.3.0",
           "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/rimraf/-/rimraf-2.2.8.tgz"
         },
         "q": {
@@ -1412,7 +1412,7 @@
             },
             "readable-stream": {
               "version": "1.0.33",
-              "from": "readable-stream@>=1.0.2 <1.1.0",
+              "from": "readable-stream@>=1.0.26-2 <1.1.0",
               "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/readable-stream/-/readable-stream-1.0.33.tgz",
               "dependencies": {
                 "core-util-is": {
@@ -1633,7 +1633,7 @@
                   "dependencies": {
                     "inherits": {
                       "version": "2.0.1",
-                      "from": "inherits@>=2.0.0 <3.0.0",
+                      "from": "inherits@>=2.0.1 <2.1.0",
                       "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/inherits/-/inherits-2.0.1.tgz"
                     },
                     "statuses": {
@@ -2027,7 +2027,7 @@
         },
         "source-map": {
           "version": "0.1.43",
-          "from": "source-map@>=0.1.31 <0.2.0",
+          "from": "source-map@>=0.1.0 <0.2.0",
           "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/source-map/-/source-map-0.1.43.tgz",
           "dependencies": {
             "amdefine": {
@@ -2039,10 +2039,382 @@
         }
       }
     },
+    "karma-coverage": {
+      "version": "0.2.7",
+      "from": "karma-coverage@>=0.2.7 <0.3.0",
+      "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/karma-coverage/-/karma-coverage-0.2.7.tgz",
+      "dependencies": {
+        "istanbul": {
+          "version": "0.3.7",
+          "from": "istanbul@>=0.3.0 <0.4.0",
+          "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/istanbul/-/istanbul-0.3.7.tgz",
+          "dependencies": {
+            "esprima": {
+              "version": "2.0.0",
+              "from": "esprima@>=2.0.0 <2.1.0",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/esprima/-/esprima-2.0.0.tgz"
+            },
+            "escodegen": {
+              "version": "1.3.3",
+              "from": "escodegen@>=1.3.0 <1.4.0",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/escodegen/-/escodegen-1.3.3.tgz",
+              "dependencies": {
+                "esutils": {
+                  "version": "1.0.0",
+                  "from": "esutils@>=1.0.0 <1.1.0",
+                  "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/esutils/-/esutils-1.0.0.tgz"
+                },
+                "estraverse": {
+                  "version": "1.5.1",
+                  "from": "estraverse@>=1.5.0 <1.6.0",
+                  "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/estraverse/-/estraverse-1.5.1.tgz"
+                },
+                "esprima": {
+                  "version": "1.1.1",
+                  "from": "esprima@>=1.1.1 <1.2.0",
+                  "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/esprima/-/esprima-1.1.1.tgz"
+                },
+                "source-map": {
+                  "version": "0.1.43",
+                  "from": "source-map@>=0.1.7 <0.2.0",
+                  "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/source-map/-/source-map-0.1.43.tgz",
+                  "dependencies": {
+                    "amdefine": {
+                      "version": "0.1.0",
+                      "from": "amdefine@>=0.0.4",
+                      "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/amdefine/-/amdefine-0.1.0.tgz"
+                    }
+                  }
+                }
+              }
+            },
+            "handlebars": {
+              "version": "1.3.0",
+              "from": "handlebars@>=1.3.0 <1.4.0",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/handlebars/-/handlebars-1.3.0.tgz",
+              "dependencies": {
+                "optimist": {
+                  "version": "0.3.7",
+                  "from": "optimist@>=0.3.0 <0.4.0",
+                  "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/optimist/-/optimist-0.3.7.tgz"
+                },
+                "uglify-js": {
+                  "version": "2.3.6",
+                  "from": "uglify-js@>=2.3.0 <2.4.0",
+                  "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/uglify-js/-/uglify-js-2.3.6.tgz",
+                  "dependencies": {
+                    "async": {
+                      "version": "0.2.10",
+                      "from": "async@>=0.2.6 <0.3.0",
+                      "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/async/-/async-0.2.10.tgz"
+                    },
+                    "source-map": {
+                      "version": "0.1.43",
+                      "from": "source-map@>=0.1.7 <0.2.0",
+                      "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/source-map/-/source-map-0.1.43.tgz",
+                      "dependencies": {
+                        "amdefine": {
+                          "version": "0.1.0",
+                          "from": "amdefine@>=0.0.4",
+                          "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/amdefine/-/amdefine-0.1.0.tgz"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "mkdirp": {
+              "version": "0.5.0",
+              "from": "mkdirp@>=0.5.0 <0.6.0",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/mkdirp/-/mkdirp-0.5.0.tgz",
+              "dependencies": {
+                "minimist": {
+                  "version": "0.0.8",
+                  "from": "minimist@0.0.8",
+                  "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/minimist/-/minimist-0.0.8.tgz"
+                }
+              }
+            },
+            "nopt": {
+              "version": "3.0.1",
+              "from": "nopt@>=3.0.0 <4.0.0",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/nopt/-/nopt-3.0.1.tgz"
+            },
+            "fileset": {
+              "version": "0.1.5",
+              "from": "fileset@>=0.1.0 <0.2.0",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/fileset/-/fileset-0.1.5.tgz",
+              "dependencies": {
+                "glob": {
+                  "version": "3.2.11",
+                  "from": "glob@>=3.0.0 <4.0.0",
+                  "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/glob/-/glob-3.2.11.tgz",
+                  "dependencies": {
+                    "inherits": {
+                      "version": "2.0.1",
+                      "from": "inherits@>=2.0.0 <3.0.0",
+                      "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/inherits/-/inherits-2.0.1.tgz"
+                    }
+                  }
+                }
+              }
+            },
+            "which": {
+              "version": "1.0.9",
+              "from": "which@>=1.0.5 <1.1.0",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/which/-/which-1.0.9.tgz"
+            },
+            "async": {
+              "version": "0.9.0",
+              "from": "async@>=0.9.0 <0.10.0",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/async/-/async-0.9.0.tgz"
+            },
+            "supports-color": {
+              "version": "1.2.1",
+              "from": "supports-color@>=1.2.0 <1.3.0",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/supports-color/-/supports-color-1.2.1.tgz"
+            },
+            "abbrev": {
+              "version": "1.0.5",
+              "from": "abbrev@>=1.0.0 <2.0.0",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/abbrev/-/abbrev-1.0.5.tgz"
+            },
+            "wordwrap": {
+              "version": "0.0.2",
+              "from": "wordwrap@>=0.0.0 <0.1.0",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/wordwrap/-/wordwrap-0.0.2.tgz"
+            },
+            "resolve": {
+              "version": "0.7.4",
+              "from": "resolve@>=0.7.0 <0.8.0",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/resolve/-/resolve-0.7.4.tgz"
+            },
+            "js-yaml": {
+              "version": "3.2.7",
+              "from": "js-yaml@>=3.0.0 <4.0.0",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/js-yaml/-/js-yaml-3.2.7.tgz",
+              "dependencies": {
+                "argparse": {
+                  "version": "1.0.1",
+                  "from": "argparse@>=1.0.0 <1.1.0",
+                  "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/argparse/-/argparse-1.0.1.tgz",
+                  "dependencies": {
+                    "lodash": {
+                      "version": "3.2.0",
+                      "from": "lodash@>=3.2.0 <3.3.0",
+                      "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/lodash/-/lodash-3.2.0.tgz"
+                    },
+                    "sprintf-js": {
+                      "version": "1.0.2",
+                      "from": "sprintf-js@>=1.0.2 <1.1.0",
+                      "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/sprintf-js/-/sprintf-js-1.0.2.tgz"
+                    }
+                  }
+                }
+              }
+            },
+            "once": {
+              "version": "1.3.1",
+              "from": "once@>=1.0.0 <2.0.0",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/once/-/once-1.3.1.tgz",
+              "dependencies": {
+                "wrappy": {
+                  "version": "1.0.1",
+                  "from": "wrappy@>=1.0.0 <2.0.0",
+                  "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/wrappy/-/wrappy-1.0.1.tgz"
+                }
+              }
+            }
+          }
+        },
+        "ibrik": {
+          "version": "2.0.0",
+          "from": "ibrik@>=2.0.0 <2.1.0",
+          "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/ibrik/-/ibrik-2.0.0.tgz",
+          "dependencies": {
+            "lodash": {
+              "version": "2.4.1",
+              "from": "lodash@>=2.4.1 <2.5.0",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/lodash/-/lodash-2.4.1.tgz"
+            },
+            "coffee-script": {
+              "version": "1.8.0",
+              "from": "coffee-script@>=1.8.0 <1.9.0",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/coffee-script/-/coffee-script-1.8.0.tgz",
+              "dependencies": {
+                "mkdirp": {
+                  "version": "0.3.5",
+                  "from": "mkdirp@>=0.3.5 <0.4.0",
+                  "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/mkdirp/-/mkdirp-0.3.5.tgz"
+                }
+              }
+            },
+            "estraverse": {
+              "version": "1.8.0",
+              "from": "estraverse@>=1.8.0 <1.9.0",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/estraverse/-/estraverse-1.8.0.tgz"
+            },
+            "which": {
+              "version": "1.0.9",
+              "from": "which@>=1.0.5 <1.1.0",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/which/-/which-1.0.9.tgz"
+            },
+            "mkdirp": {
+              "version": "0.5.0",
+              "from": "mkdirp@>=0.5.0 <0.6.0",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/mkdirp/-/mkdirp-0.5.0.tgz",
+              "dependencies": {
+                "minimist": {
+                  "version": "0.0.8",
+                  "from": "minimist@0.0.8",
+                  "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/minimist/-/minimist-0.0.8.tgz"
+                }
+              }
+            },
+            "optimist": {
+              "version": "0.6.1",
+              "from": "optimist@>=0.6.0 <0.7.0",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/optimist/-/optimist-0.6.1.tgz",
+              "dependencies": {
+                "wordwrap": {
+                  "version": "0.0.2",
+                  "from": "wordwrap@>=0.0.0 <0.1.0",
+                  "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/wordwrap/-/wordwrap-0.0.2.tgz"
+                },
+                "minimist": {
+                  "version": "0.0.10",
+                  "from": "minimist@>=0.0.1 <0.1.0",
+                  "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/minimist/-/minimist-0.0.10.tgz"
+                }
+              }
+            },
+            "esprima": {
+              "version": "1.2.5",
+              "from": "esprima@>=1.2.0 <1.3.0",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/esprima/-/esprima-1.2.5.tgz"
+            },
+            "fileset": {
+              "version": "0.1.5",
+              "from": "fileset@>=0.1.0 <0.2.0",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/fileset/-/fileset-0.1.5.tgz",
+              "dependencies": {
+                "glob": {
+                  "version": "3.2.11",
+                  "from": "glob@>=3.0.0 <4.0.0",
+                  "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/glob/-/glob-3.2.11.tgz",
+                  "dependencies": {
+                    "inherits": {
+                      "version": "2.0.1",
+                      "from": "inherits@>=2.0.0 <3.0.0",
+                      "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/inherits/-/inherits-2.0.1.tgz"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "dateformat": {
+          "version": "1.0.11",
+          "from": "dateformat@>=1.0.6 <1.1.0",
+          "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/dateformat/-/dateformat-1.0.11.tgz",
+          "dependencies": {
+            "get-stdin": {
+              "version": "4.0.1",
+              "from": "get-stdin@*",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/get-stdin/-/get-stdin-4.0.1.tgz"
+            },
+            "meow": {
+              "version": "3.1.0",
+              "from": "meow@*",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/meow/-/meow-3.1.0.tgz",
+              "dependencies": {
+                "camelcase-keys": {
+                  "version": "1.0.0",
+                  "from": "camelcase-keys@>=1.0.0 <2.0.0",
+                  "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/camelcase-keys/-/camelcase-keys-1.0.0.tgz",
+                  "dependencies": {
+                    "camelcase": {
+                      "version": "1.0.2",
+                      "from": "camelcase@>=1.0.1 <2.0.0",
+                      "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/camelcase/-/camelcase-1.0.2.tgz"
+                    },
+                    "map-obj": {
+                      "version": "1.0.0",
+                      "from": "map-obj@>=1.0.0 <2.0.0",
+                      "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/map-obj/-/map-obj-1.0.0.tgz"
+                    }
+                  }
+                },
+                "indent-string": {
+                  "version": "1.2.1",
+                  "from": "indent-string@>=1.1.0 <2.0.0",
+                  "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/indent-string/-/indent-string-1.2.1.tgz",
+                  "dependencies": {
+                    "repeating": {
+                      "version": "1.1.2",
+                      "from": "repeating@>=1.1.0 <2.0.0",
+                      "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/repeating/-/repeating-1.1.2.tgz",
+                      "dependencies": {
+                        "is-finite": {
+                          "version": "1.0.0",
+                          "from": "is-finite@>=1.0.0 <2.0.0",
+                          "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/is-finite/-/is-finite-1.0.0.tgz"
+                        }
+                      }
+                    }
+                  }
+                },
+                "minimist": {
+                  "version": "1.1.0",
+                  "from": "minimist@>=1.1.0 <2.0.0",
+                  "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/minimist/-/minimist-1.1.0.tgz"
+                },
+                "object-assign": {
+                  "version": "2.0.0",
+                  "from": "object-assign@>=2.0.0 <3.0.0",
+                  "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/object-assign/-/object-assign-2.0.0.tgz"
+                }
+              }
+            }
+          }
+        },
+        "minimatch": {
+          "version": "0.3.0",
+          "from": "minimatch@>=0.3.0 <0.4.0",
+          "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/minimatch/-/minimatch-0.3.0.tgz",
+          "dependencies": {
+            "lru-cache": {
+              "version": "2.5.0",
+              "from": "lru-cache@>=2.0.0 <3.0.0",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/lru-cache/-/lru-cache-2.5.0.tgz"
+            },
+            "sigmund": {
+              "version": "1.0.0",
+              "from": "sigmund@>=1.0.0 <1.1.0",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/sigmund/-/sigmund-1.0.0.tgz"
+            }
+          }
+        }
+      }
+    },
     "karma-jasmine": {
       "version": "0.2.3",
       "from": "karma-jasmine@>=0.2.0 <0.3.0",
       "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/karma-jasmine/-/karma-jasmine-0.2.3.tgz"
+    },
+    "karma-junit-reporter": {
+      "version": "0.2.2",
+      "from": "karma-junit-reporter@>=0.2.2 <0.3.0",
+      "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/karma-junit-reporter/-/karma-junit-reporter-0.2.2.tgz",
+      "dependencies": {
+        "xmlbuilder": {
+          "version": "0.4.2",
+          "from": "xmlbuilder@0.4.2",
+          "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/xmlbuilder/-/xmlbuilder-0.4.2.tgz"
+        }
+      }
     },
     "karma-phantomjs-launcher": {
       "version": "0.1.4",
@@ -2060,9 +2432,9 @@
               "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/adm-zip/-/adm-zip-0.4.4.tgz"
             },
             "fs-extra": {
-              "version": "0.16.4",
+              "version": "0.16.5",
               "from": "fs-extra@>=0.16.0 <0.17.0",
-              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/fs-extra/-/fs-extra-0.16.4.tgz",
+              "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/fs-extra/-/fs-extra-0.16.5.tgz",
               "dependencies": {
                 "graceful-fs": {
                   "version": "3.0.5",
@@ -2075,14 +2447,14 @@
                   "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/jsonfile/-/jsonfile-2.0.0.tgz"
                 },
                 "rimraf": {
-                  "version": "2.3.1",
+                  "version": "2.3.2",
                   "from": "rimraf@>=2.2.8 <3.0.0",
-                  "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/rimraf/-/rimraf-2.3.1.tgz",
+                  "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/rimraf/-/rimraf-2.3.2.tgz",
                   "dependencies": {
                     "glob": {
-                      "version": "4.5.0",
+                      "version": "4.5.1",
                       "from": "glob@>=4.4.2 <5.0.0",
-                      "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/glob/-/glob-4.5.0.tgz",
+                      "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/glob/-/glob-4.5.1.tgz",
                       "dependencies": {
                         "inflight": {
                           "version": "1.0.4",
@@ -2102,9 +2474,9 @@
                           "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/inherits/-/inherits-2.0.1.tgz"
                         },
                         "minimatch": {
-                          "version": "2.0.1",
+                          "version": "2.0.3",
                           "from": "minimatch@>=2.0.1 <3.0.0",
-                          "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/minimatch/-/minimatch-2.0.1.tgz",
+                          "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/minimatch/-/minimatch-2.0.3.tgz",
                           "dependencies": {
                             "brace-expansion": {
                               "version": "1.1.0",
@@ -2447,12 +2819,12 @@
       "dependencies": {
         "findup-sync": {
           "version": "0.1.3",
-          "from": "findup-sync@>=0.1.0 <0.2.0",
+          "from": "findup-sync@>=0.1.2 <0.2.0",
           "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/findup-sync/-/findup-sync-0.1.3.tgz",
           "dependencies": {
             "glob": {
               "version": "3.2.11",
-              "from": "glob@>=3.2.11 <4.0.0",
+              "from": "glob@>=3.2.7 <3.3.0",
               "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/glob/-/glob-3.2.11.tgz",
               "dependencies": {
                 "inherits": {
@@ -2510,7 +2882,7 @@
             },
             "minimatch": {
               "version": "1.0.0",
-              "from": "minimatch@>=1.0.0 <2.0.0",
+              "from": "minimatch@>=1.0.0 <1.1.0",
               "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/minimatch/-/minimatch-1.0.0.tgz",
               "dependencies": {
                 "lru-cache": {
@@ -2563,7 +2935,7 @@
           "dependencies": {
             "async": {
               "version": "0.2.10",
-              "from": "async@>=0.2.0 <0.3.0",
+              "from": "async@>=0.2.6 <0.3.0",
               "resolved": "http://nexus.apiumtech.com/nexus/content/groups/npm-repositories/async/-/async-0.2.10.tgz"
             },
             "source-map": {
