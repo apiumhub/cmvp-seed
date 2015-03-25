@@ -13,6 +13,8 @@ To do this:
 * Install Karma plugin 
 * Configure Karma in "Run Configurations"
 * Run the tests
+<div align="center"><img src="http://apiumtech.com/wp-content/uploads/2015/03/test_ok_2.png" > </img></div>
+
 
 ## About CMVP Architecture
 
@@ -87,6 +89,7 @@ Communication with server is done using q promises. They facilitate response tre
 <img src="http://apiumtech.com/wp-content/uploads/2015/03/sinon_javascript.png" > </img>
 <img src="http://lesscss.org/public/img/logo.png" > </img>
 <img src="http://apiumtech.com/wp-content/uploads/2015/03/npm_logo.png" > </img>
+<img src="http://phantomjs.org/img/phantomjs-logo.png" > </img>
 
 
 
