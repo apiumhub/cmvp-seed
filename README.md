@@ -1,4 +1,4 @@
-# cmvp-seed
+# CMVP-Seed :: Angular Controller + MVP
 CMVP architecture seed. Feel free to use in your projects :)
 
 ## Installation
