@@ -79,5 +79,6 @@ Communication with server is done using q promises. They facilitate response tre
 <img src="http://karma-runner.github.io/assets/img/banner.png" > </img>
 <img src="http://www.macminicolo.net/i_mini/jenkinslogo.png" > </img>
 <img src="https://angularjs.org/img/AngularJS-large.png" > </img>
+<img src="https://nodejs.org/images/roadshow-promo.png" > </img>
 
 
