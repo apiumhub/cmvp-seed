@@ -84,5 +84,9 @@ Communication with server is done using q promises. They facilitate response tre
 <img src="http://apiumtech.com/wp-content/uploads/2015/03/jasmine.png" > </img>
 <img src="http://requirejs.org/i/logo.png" > </img>
 <img src="http://www.sonarqube.org/wp-content/themes/sonarsource.org/images/sonar.png" > </img>
+<img src="http://apiumtech.com/wp-content/uploads/2015/03/sinon_javascript.png" > </img>
+<img src="http://lesscss.org/public/img/logo.png" > </img>
+<img src="http://apiumtech.com/wp-content/uploads/2015/03/npm_logo.png" > </img>
+
 
 
