@@ -72,4 +72,12 @@ With Event Bus views’ shared state can be avoided. Every view is independent a
 Communication with server is done using q promises. They facilitate response treating implementing callbacks for success, error, timeout, etc.
 
 
+# Technologies
+<strong>The <a href="http://apiumtech.com">Apiumtech Team</a></strong> has built the CMVP Seed on top of these amazing and awesome technologies:
+
+<img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRvHWF-dZAWmRYOTy0AHz2t0XfeFRehD_TSrWV2weRQwXl05m91CVrgF4XS" > </img>
+<img src="http://karma-runner.github.io/assets/img/banner.png" > </img>
+<img src="http://www.macminicolo.net/i_mini/jenkinslogo.png" > </img>
+<img src="https://angularjs.org/img/AngularJS-large.png" > </img>
+
 
