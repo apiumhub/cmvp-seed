@@ -73,7 +73,7 @@ Communication with server is done using q promises. They facilitate response tre
 
 
 # Technologies
-<strong>The <a href="http://apiumtech.com">Apiumtech Team</a></strong> has built the CMVP Seed on top of these amazing and awesome technologies:
+<strong>The <a href="http://apiumtech.com">Apiumtech Team</a></strong> has built the <strong>CMVP Seed</strong> on top of these amazing and awesome technologies:
 
 <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRvHWF-dZAWmRYOTy0AHz2t0XfeFRehD_TSrWV2weRQwXl05m91CVrgF4XS" > </img>
 <img src="http://karma-runner.github.io/assets/img/banner.png" > </img>
