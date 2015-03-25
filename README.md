@@ -46,15 +46,30 @@ That also have some good things like testeability, emergent design... That's Agi
 ### Diving in. View.
 
 * view’s responsibility is to instantiate a presenter. It also may pass presenter a model instance.
-* view has 3 main blocks: 
-** data: presentation model that is exposed in $scope and is accessible from the html view.
-** event: functions which execution means a model access. They are always overwritten in presenter.
-** fn: functions which execution do not require a model intervention. 
+* view has 3 main blocks:
+>* data: presentation model that is exposed in $scope and is accessible from the html view.
+>* event: functions which execution means a model access. They are always overwritten in presenter.
+>* fn: functions which execution do not require a model intervention. 
 
 ### Diving in. Presenter.
 
 The only responsibility is to bind view events with model methods. It is accomplished passing view’s methods as callbacks.
 
+# Components
+
+## Aspects
+
+Implemented with meld library. Aspects make possible to “cut across” different application domains. 
+In JS they are used in order to implement Dynamic Proxy design pattern.
+
+## EventBus
+
+Communication between different views is accomplished by the implementation of Event Bus. 
+With Event Bus views’ shared state can be avoided. Every view is independent and does not rely on other views implementation.
+
+## Q Promises
+
+Communication with server is done using q promises. They facilitate response treating implementing callbacks for success, error, timeout, etc.
 
 
 
