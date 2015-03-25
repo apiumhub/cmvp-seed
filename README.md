@@ -80,5 +80,9 @@ Communication with server is done using q promises. They facilitate response tre
 <img src="http://www.macminicolo.net/i_mini/jenkinslogo.png" > </img>
 <img src="https://angularjs.org/img/AngularJS-large.png" > </img>
 <img src="https://nodejs.org/images/roadshow-promo.png" > </img>
+<img src="http://chaijs.com/public/img/chai-logo-small.png" > </img>
+<img src="http://apiumtech.com/wp-content/uploads/2015/03/jasmine.png" > </img>
+<img src="http://requirejs.org/i/logo.png" > </img>
+<img src="http://www.sonarqube.org/wp-content/themes/sonarsource.org/images/sonar.png" > </img>
 
 
