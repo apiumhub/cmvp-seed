@@ -47,9 +47,9 @@ That also have some good things like testeability, emergent design... That's Agi
 
 * view’s responsibility is to instantiate a presenter. It also may pass presenter a model instance.
 * view has 3 main blocks:
->* data: presentation model that is exposed in $scope and is accessible from the html view.
->* event: functions which execution means a model access. They are always overwritten in presenter.
->* fn: functions which execution do not require a model intervention. 
+** data: presentation model that is exposed in $scope and is accessible from the html view.
+** event: functions which execution means a model access. They are always overwritten in presenter.
+** fn: functions which execution do not require a model intervention. 
 
 ### Diving in. Presenter.
 
