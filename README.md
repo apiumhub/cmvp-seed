@@ -5,7 +5,7 @@ CMVP architecture seed. Feel free to use in your projects :)
 `npm install`
 
 ## Running the tests
-To check that the system is ok, simply run the test.
+To check that the system is ok, simply run the tests.
 As long as we promote the use of a strong IDE, we suggest to run the test from PHPStorm.
 To do this:
 
