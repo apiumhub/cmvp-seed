@@ -9,6 +9,13 @@ module.exports = function (grunt) {
             options: {
                 livereload: true
             }
+        },
+        'less': {
+            files: 'assets/less/**/*.less',
+            tasks: ['less:compile'],
+            options: {
+                livereload: true
+            }
         }
     };
 }
