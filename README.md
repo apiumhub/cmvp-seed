@@ -1,5 +1,7 @@
 # CMVP-Seed :: Angular Controller + MVP
 CMVP architecture seed. Feel free to use in your projects :)
+We did this to help developers to create a cool strict MVP.
+You can <a href="http://apiumtech.com/contact-us" >contact us</a> for any question... We've been very successful using that architecture for many webapp and mobile projects for the last 2 years.
 
 ## Installation
 `npm install`
