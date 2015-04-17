@@ -3,17 +3,17 @@
  */
 describe("MyPresenter", function () {
     var MyPresenter = app.getPresenter("presenters/MyPresenter").newInstance().getOrElse(throwException("Could not create a basic MyPresenter!"));
-    var sinon = app.getService('sinon');
 
     function exerciseCreateValidPresenter() {
         var showModelSpy = jasmine.createSpy("showModel");
         var showErrorSpy = jasmine.createSpy("showError");
 
         var MyView = { event: {}, data: {}, showModel: showModelSpy, showError: showErrorSpy };
-        var MyModel = { getModelById: function () {} };
-        var MyModelMock = sinon.mock(MyModel);
 
-        MyModelMock.expects("getModelById").returns(fakePromise({text: "Some Text"}, null));
+        var MyModel = {};
+        MyModel.getModelById = function () {
+            return fakePromise({text: "Some Text"}, null);
+        };
 
         MyPresenter.show(MyView, MyModel);
         return {

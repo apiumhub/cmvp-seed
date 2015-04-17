@@ -5,7 +5,6 @@
 describe("MyModel", function () {
     var MyModel = app.getModel('models/MyModel');
     var AjaxService = app.getService('services/AjaxService');
-    var sinon = app.getService('sinon');
 
     function exerciseNewModel(ajaxService) {
         return MyModel.newInstance(ajaxService).getOrElse(throwException("Could not create MyModel!!!"));
@@ -15,9 +14,7 @@ describe("MyModel", function () {
         var service = new AjaxService();
         var expectedValue = {text: "Some Value"};
 
-        var serviceMock = sinon.mock(service);
-        serviceMock.expects("ajax").returns(fakePromise(expectedValue));
-
+        service.ajax = function () { return fakePromise(expectedValue) };
         return { service: service, expectedValue: expectedValue };
     }
 
@@ -25,9 +22,7 @@ describe("MyModel", function () {
         var service = new AjaxService();
         var expectedValue = "some error";
 
-        var serviceMock = sinon.mock(service);
-        serviceMock.expects("ajax").returns(fakePromise(null, expectedValue));
-
+        service.ajax = function () { return fakePromise(null, expectedValue) };
         return { service: service, expectedValue: expectedValue };
     }
 
@@ -36,7 +31,7 @@ describe("MyModel", function () {
         var model = exerciseNewModel(ajaxContext.service);
 
         model.getModelById(0).then(function (value) {
-           expect(value).toEqual(ajaxContext.expectedValue);
+            expect(value).toEqual(ajaxContext.expectedValue);
         });
     });
 
