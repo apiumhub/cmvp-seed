@@ -18,15 +18,12 @@ function main() {
      app = ApplicationFactory.newRequireApplication("RequireJS")
         .composedWith(ApplicationFactory.newAngularApplication('AngularApp', [ 'ngRoute' ], AngularConfig));
 
+    app.controllers = ['controllers/MyController'];
+
     app.manifest = {
         authors: [ 'apium tech' ],
         version: 0.1,
-        src: [
-            'Configuration',
-            'services/EventBus', 'services/AjaxService', 'aspects/ViewRepaintAspect',
-            'controllers/MyController', 'views/MyView', 'presenters/MyPresenter', 'models/MyModel',
-            'controllers/TomatoController', 'views/TomatoView', 'presenters/TomatoPresenter'
-        ]
+        src: 'build/seed.min'
     };
 
     /** Application basic configuration **/

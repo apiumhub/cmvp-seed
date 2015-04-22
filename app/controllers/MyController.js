@@ -1,8 +1,8 @@
 /**
  * Created by kevin on 10/22/14.
  */
-app.registerController(function (container) {
-    var MyView = container.getView("views/MyView");
+define(function(require){
+    var MyView = require("views/MyView");
 
     function MyController($scope, $routeParams) {
         this.view = MyView.newInstance($scope).getOrElse(throwException("Could not create MyView!"));
@@ -17,4 +17,4 @@ app.registerController(function (container) {
     }
 
     return MyController;
-});
+})

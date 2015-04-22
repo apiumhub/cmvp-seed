@@ -127,10 +127,11 @@
 
             impl.initialize = function () {
                 if (impl.isComposedWith("require")) {
-                    jsScope.require(["Application"], function (app) {
-                        app.manifest.src.forEach(function (value) {
+                    jsScope.require(["Application", app.manifest.src], function (app) {
+                        (app.controllers || app.manifest.src).forEach(function (value) {
                            if (value.indexOf("Controller") != -1) {
-                               angularApp.controller(value.substring(value.lastIndexOf('/') + 1), app.getController(value));
+                               var controller = value.substring(value.lastIndexOf('/') + 1);
+                               angularApp.controller(controller, app.getController(value));
                            }
                         });
 
@@ -187,7 +188,6 @@
 
     function applySetsTo(obj) {
         var impl = obj || {};
-
         impl.registerFunction = impl.registerObject;
         impl.registerView = impl.registerController = impl.registerPresenter = impl.registerModel =
             impl.registerService = impl.register = function (cfg, factory) {

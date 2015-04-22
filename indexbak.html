@@ -3,17 +3,13 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Some(test)</title>
+    <script src="/app/main.js"></script>
+    <script src="/app/require.cfg.js"></script>
+    <script src="/node_modules/requirejs/require.js"></script>
 
     <link rel="stylesheet" href="build/cmvp-proto.min.css" />
 </head>
 <body>
 <div ng-view></div>
-<script src="/node_modules/requirejs/require.js"></script>
-
-<script>
-    require(['build/seed-deps.min'],function(){
-        main();
-    })
-</script>
 </body>
 </html>
