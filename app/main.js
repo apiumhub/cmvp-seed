@@ -4,12 +4,38 @@
 
 var app = null;
 
+var data = {
+    "records": [
+        {
+            "keyName": "this-is-a-seo-route",
+            "templateUrl": "/templates/seoView.html",
+            "controller": "MyController"
+        }
+    ]
+}
+
 function main() {
+
+    function applySEOurls($routeProvider, data) {
+        for (var x = 0; x < data.records.length; x++) {
+            var currentRoute = data.records[x];
+            var routeName = "/" + currentRoute.keyName;
+            $routeProvider.when(routeName, {
+                templateUrl: currentRoute.templateUrl,
+                controller: currentRoute.controller
+            });
+        }
+    }
+
     /** AngularJS App Configuration **/
     function AngularConfig($routeProvider) {
+
         $routeProvider
             .when("/model/:modelId", {templateUrl: '/templates/myView.html', controller: 'MyController'})
             .otherwise({templateUrl: '/templates/myView.html', controller: 'MyController'});
+
+        applySEOurls($routeProvider, data);
+
     }
 
     AngularConfig.$inject = [ '$routeProvider' ];
@@ -19,7 +45,7 @@ function main() {
         .composedWith(ApplicationFactory.newAngularApplication('AngularApp', [ 'ngRoute' ], AngularConfig));
 
     app.manifest = {
-        authors: [ 'apium tech' ],
+        authors: [ 'apiumtech' ],
         version: 0.1,
         src: [
             'Configuration',
@@ -37,6 +63,7 @@ function main() {
     app.registerObject({name: "Application", dependencies: ["SourceList"]}, function () {
         return app;
     });
+
 
     app.initialize();
     return app;
