@@ -4,41 +4,37 @@
 
 var app = null;
 
-var data = {
-    "records": [
-        {
-            "keyName": "this-is-a-seo-route",
-            "templateUrl": "/templates/seoView.html",
-            "controller": "MyController"
-        }
-    ]
-}
-
 function main() {
 
-    function applySEOurls($routeProvider, data) {
+    function ApplySEOurls($routeProvider, data) {
         for (var x = 0; x < data.records.length; x++) {
-            var currentRoute = data.records[x];
-            var routeName = "/" + currentRoute.keyName;
-            $routeProvider.when(routeName, {
-                templateUrl: currentRoute.templateUrl,
-                controller: currentRoute.controller
+            var route = data.records[x];
+            $routeProvider.when("/" + route.keyName, {
+                templateUrl: route.templateUrl,
+                controller: route.controller
             });
         }
     }
 
     /** AngularJS App Configuration **/
-    function AngularConfig($routeProvider) {
+    function AngularConfig($routeProvider, $locationProvider) {
+
+        $locationProvider.html5Mode({
+            enabled: false,
+            requireBase: true
+        });
 
         $routeProvider
             .when("/model/:modelId", {templateUrl: '/templates/myView.html', controller: 'MyController'})
             .otherwise({templateUrl: '/templates/myView.html', controller: 'MyController'});
 
-        applySEOurls($routeProvider, data);
+        $.get('config/routedata.json', function (data) {
+            ApplySEOurls($routeProvider, data);
+        });
 
     }
 
-    AngularConfig.$inject = [ '$routeProvider' ];
+    AngularConfig.$inject = [ '$routeProvider', '$locationProvider'];
 
     /** Application Building **/
      app = ApplicationFactory.newRequireApplication("RequireJS")

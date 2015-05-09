@@ -1,0 +1,14 @@
+{
+    "records" : [
+        {
+            "keyName": "this-is-a-seo-route",
+            "templateUrl": "/templates/seoView.html",
+            "controller": "MyController"
+        },
+        {
+          "keyName": "another-route/with-slash",
+          "templateUrl": "/templates/seoView.html",
+          "controller": "MyController"
+        }
+    ]
+}

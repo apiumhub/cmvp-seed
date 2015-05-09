@@ -4,6 +4,7 @@ var require = {
         'lodash': '/node_modules/postal/node_modules/lodash/dist/lodash.min',
         'conduitjs': '/node_modules/postal/node_modules/conduitjs/lib/conduit.min',
         'angular-route': '/node_modules/angular-route/angular-route.min',
+        'angular-resource': '/node_modules/angular-resource/angular-resource.min',
         'angular': '/node_modules/angular/angular.min',
         'jquery': '/node_modules/jquery/dist/jquery.min',
         'postal': '/node_modules/postal/lib/postal.min',
@@ -23,6 +24,11 @@ var require = {
             exports: 'angular-route'
         },
 
+        'angular-resource': {
+            deps: [ 'angular' ],
+            exports: 'angular-resource'
+        },
+
         'jquery': {
             exports: '$'
         },
@@ -37,7 +43,7 @@ var require = {
         }
     },
 
-    'deps': ['angular', 'angular-route', 'jquery', 'q', 'postal', 'meld', 'framework', 'functional-option'],
+    'deps': ['angular', 'angular-route', 'angular-resource', 'jquery', 'q', 'postal', 'meld', 'framework', 'functional-option'],
 
     callback: main
 };
