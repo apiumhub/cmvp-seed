@@ -1,8 +1,8 @@
 /**
  * Created by kevin on 10/22/14.
  */
-define(function(require){
-    var MyView = require("views/MyView");
+app.registerController(function(container){
+    var MyView = container.getView("views/MyView");
 
     function MyController($scope, $routeParams) {
         this.view = MyView.newInstance($scope).getOrElse(throwException("Could not create MyView!"));

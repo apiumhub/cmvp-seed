@@ -127,7 +127,7 @@
 
             impl.initialize = function () {
                 if (impl.isComposedWith("require")) {
-                    jsScope.require(["Application", app.manifest.src], function (app) {
+                    jsScope.require(["Application"], function (app) {
                         (app.controllers || app.manifest.src).forEach(function (value) {
                            if (value.indexOf("Controller") != -1) {
                                var controller = value.substring(value.lastIndexOf('/') + 1);

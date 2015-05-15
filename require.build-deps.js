@@ -37,7 +37,5 @@ requirejs.config({
             "exports": "ApplicationFactory"
         }
     },
-    'include': ['angular', 'angular-route', 'jquery', 'q', 'postal', 'meld', 'framework', 'functional-option',
-        'main'
-        ]
+    'include': ['angular', 'angular-route', 'jquery', 'q', 'postal', 'meld', 'framework', 'functional-option']
 });
