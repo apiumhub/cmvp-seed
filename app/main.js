@@ -3,7 +3,8 @@
  */
 
 
-define(function() {
+define(function(require) {
+    var ApplicationFactory=require("framework");
     return function main(globalScope) {
         function ApplySEOurls($routeProvider, data) {
             for (var x = 0; x < data.records.length; x++) {
