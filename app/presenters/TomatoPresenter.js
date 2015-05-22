@@ -1,8 +1,8 @@
 /**
  * Created by kevin on 10/27/14.
  */
-app.registerPresenter(function (container) {
-    var EventBus = container.getService('services/EventBus');
+define(function (require) {
+    var EventBus = require('services/EventBus');
 
     function TomatoPresenter($eventBus) {
         this.eventBus = $eventBus;

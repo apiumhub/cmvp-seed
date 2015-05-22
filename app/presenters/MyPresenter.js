@@ -2,8 +2,8 @@
  * Created by kevin on 10/22/14.
  */
 
-app.registerPresenter(function (container) {
-    var EventBus = container.getService('services/EventBus');
+define(function (require) {
+    var EventBus = require('services/EventBus');
 
     function MyPresenter($eventBus) {
         this.eventBus = $eventBus;

@@ -1,8 +1,8 @@
 /**
  * Created by kevin on 10/27/14.
  */
-app.registerService(function (container) {
-    var meld = container.getFunction('meld');
+define(function (require) {
+    var meld = require('meld');
 
     return {
         weave: function (view) {

@@ -1,8 +1,8 @@
 /**
  * Created by kevin on 10/24/14.
  */
-app.register(function (container) {
-    var postal = container.getObject('postal');
+define(function (require) {
+    var postal = require('postal');
 
     function EventBus() {
 

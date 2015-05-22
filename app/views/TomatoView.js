@@ -1,9 +1,9 @@
 /**
  * Created by kevin on 10/27/14.
  */
-app.registerView(function (container) {
-    var ViewRepaintAspect = container.getService('aspects/ViewRepaintAspect');
-    var TomatoPresenter = container.getPresenter('presenters/TomatoPresenter');
+define(function (require) {
+    var ViewRepaintAspect = require('aspects/ViewRepaintAspect');
+    var TomatoPresenter = require('presenters/TomatoPresenter');
 
     function TomatoView($scope, $tomatoPresenter) {
         this.data = {};

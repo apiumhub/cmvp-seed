@@ -1,8 +1,8 @@
 /**
  * Created by kevin on 10/22/14.
  */
-app.registerModel(function (container) {
-    var AjaxService = container.getService('services/AjaxService');
+define(function (require) {
+    var AjaxService = require('services/AjaxService');
 
     function MyModel($ajaxService) {
         this.$ajaxService = $ajaxService;

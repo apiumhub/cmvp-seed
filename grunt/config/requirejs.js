@@ -5,8 +5,7 @@ module.exports = function (grunt) {
     return {
         compile: {
             options: {
-                baseUrl: '.',
-                name: 'app/main',
+                baseUrl: './app',
                 mainConfigFile: 'require.build.js',
                 out: 'build/<%= pkg.name %>.min.js',
                 optimize: 'none'

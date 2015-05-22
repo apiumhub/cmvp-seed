@@ -1,5 +1,5 @@
-app.registerController(function (container) {
-    var GlobalView = container.getView("views/GolbalView");
+define(function (require) {
+    var GlobalView = require("views/GolbalView");
 
     function GobalController($scope, $routeParams) {
         this.view = GobalView.newInstance($scope).getOrElse(throwException("Could not create GobalView!"));

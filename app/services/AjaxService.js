@@ -1,8 +1,8 @@
 /**
  * Created by kevin on 10/27/14.
  */
-app.registerService(function (container) {
-    var Q = container.getFunction('q');
+define(function (require) {
+    var Q = require('q');
 
     function AjaxService() {
 

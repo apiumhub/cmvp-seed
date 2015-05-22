@@ -2,10 +2,10 @@
  * Created by kevin on 10/22/14.
  */
 
-app.registerView(function (container) {
-    var MyPresenter = container.getPresenter('presenters/MyPresenter');
-    var MyModel = container.getModel('models/MyModel');
-    var ViewRepaintAspect = container.getService('aspects/ViewRepaintAspect');
+define(function (require) {
+    var MyPresenter = require('presenters/MyPresenter');
+    var MyModel = require('models/MyModel');
+    var ViewRepaintAspect = require('aspects/ViewRepaintAspect');
 
     function MyView($scope, model, presenter) {
         this.data = {};
