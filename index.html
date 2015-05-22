@@ -6,18 +6,16 @@
     <!--<script src="/app/main.js"></script>-->
     <!--<script src="/app/require.cfg.js"></script>-->
     <script src="/node_modules/requirejs/require.js"></script>
-    <!--<script src="build/cmvp-proto.min.js"></script>-->
+    <script src="build/cmvp-proto.min.js"></script>
     <link rel="stylesheet" href="build/css/cmvp-proto.min.css" />
 </head>
 <body>
 <div ng-view></div>
 </body>
 <script>
-    require(['build/cmvp-proto.min'], function () {
         require(['main', 'postal', 'q', 'meld'], function (main) {
             console.log(main);
             main(window);
         });
-    });
 </script>
 </html>
