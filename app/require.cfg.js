@@ -4,7 +4,6 @@ requirejs.config({
         'lodash': '../node_modules/postal/node_modules/lodash/dist/lodash.min',
         'conduitjs': '../node_modules/postal/node_modules/conduitjs/lib/conduit.min',
         'angular-route': '../node_modules/angular-route/angular-route.min',
-        'angular-resource': '../node_modules/angular-resource/angular-resource.min',
         'angular': '../node_modules/angular/angular.min',
         'jquery': '../node_modules/jquery/dist/jquery.min',
         'postal': '../node_modules/postal/lib/postal.min',
@@ -22,11 +21,6 @@ requirejs.config({
         'angular-route': {
             deps: [ 'angular' ],
             exports: 'angular-route'
-        },
-
-        'angular-resource': {
-            deps: [ 'angular' ],
-            exports: 'angular-resource'
         },
 
         'jquery': {
@@ -48,10 +42,9 @@ requirejs.config({
 
     },
 
-    'deps': ['angular', 'angular-route', 'angular-resource', 'jquery', 'q', 'postal', 'meld', 'framework', 'functional-option']
-});
-requirejs(['main', 'postal', 'q', 'meld'], function (main) {
-    console.log(main);
-    main(window);
+    'deps': ['main', 'angular', 'angular-route', 'jquery', 'q', 'postal', 'meld', 'framework', 'functional-option'],
+    'callback': function (main) {
+        main(window);
+    }
 });
 
