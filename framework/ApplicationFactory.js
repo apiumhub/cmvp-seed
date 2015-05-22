@@ -130,7 +130,9 @@
                     jsScope.require(["Application"], function (app) {
                         app.manifest.src.forEach(function (value) {
                            if (value.indexOf("Controller") != -1) {
-                               angularApp.controller(value.substring(value.lastIndexOf('/') + 1), app.getController(value));
+                               angularApp.controller(value.substring(value.lastIndexOf('/') + 1), function () {
+                                    return app.getController(value).apply(null, arguments);
+                               });
                            }
                         });
 
