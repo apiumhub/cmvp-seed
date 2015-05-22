@@ -44,10 +44,8 @@ define(function(require) {
             authors: [ 'apiumtech' ],
             version: 0.1,
             src: [
-                'Configuration',
-                'services/EventBus', 'services/AjaxService', 'aspects/ViewRepaintAspect',
-                'controllers/MyController', 'views/MyView', 'presenters/MyPresenter', 'models/MyModel',
-                'controllers/TomatoController', 'views/TomatoView', 'presenters/TomatoPresenter'
+                'controllers/MyController',
+                'controllers/TomatoController'
             ]
         };
 
