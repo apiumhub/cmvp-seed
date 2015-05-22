@@ -9,7 +9,7 @@ module.exports = function (grunt) {
                 name: 'app/main',
                 mainConfigFile: 'require.build.js',
                 out: 'build/<%= pkg.name %>.min.js',
-                optimize: 'uglify2'
+                optimize: 'none'
             }
         }
     }
