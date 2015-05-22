@@ -7,7 +7,7 @@ define(function (require) {
     function MyController($scope, $routeParams) {
         this.view = MyView.newInstance($scope).getOrElse(throwException("Could not create MyView!"));
 
-        if ($routeParams) {
+        if ($routeParams&&$routeParams.modelId) {
             this.view.data.currentId = $routeParams.modelId;
         } else {
             this.view.data.currentId = 0;
