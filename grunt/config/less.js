@@ -17,7 +17,7 @@ module.exports = function (grunt) {
                 'report': 'min'
             },
             'files': {
-                'build/css/force-manager.min.css': 'assets/less/main.less'
+                'build/css/cmvp-proto.min.css': 'assets/less/main.less'
             }
         }
     };

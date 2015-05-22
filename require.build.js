@@ -41,6 +41,7 @@ requirejs.config({
         'app/Configuration',
         'app/services/EventBus', 'app/services/AjaxService', 'app/aspects/ViewRepaintAspect',
         'app/controllers/MyController', 'app/views/MyView', 'app/presenters/MyPresenter', 'app/models/MyModel',
-        'app/controllers/TomatoController', 'app/views/TomatoView', 'app/presenters/TomatoPresenter'
+        'app/controllers/TomatoController', 'app/views/TomatoView', 'app/presenters/TomatoPresenter',
+        'app/main'
     ]
 });
