@@ -2,9 +2,12 @@
  * Created by kevin on 10/23/14.
  */
 var tests = [];
-for (var file in window.__karma__.files) {
-    if (window.__karma__.files.hasOwnProperty(file)) {
-        if (/TestSpec\.js$/.test(file)) {
+for (var file in window.__karma__.files)
+{
+    if (window.__karma__.files.hasOwnProperty(file))
+    {
+        if (/TestSpec\.js$/.test(file))
+        {
             tests.push(file);
         }
     }
@@ -50,26 +53,42 @@ requirejs.config({
         }
     },
 
-    'deps': ['angular', 'angular-route', 'jquery', 'q', 'sinon', 'postal', 'meld', 'framework', 'functional-option', 'main'],
+    'deps': ['lodash', 'angular-route', 'angular', 'jquery', 'postal', 'q', 'functional-option',
+            'framework', 'meld',
+            'Configuration',
+            'services/EventBus', 'services/AjaxService', 'aspects/ViewRepaintAspect',
+            'controllers/MyController', 'views/MyView', 'presenters/MyPresenter', 'models/MyModel',
+            'controllers/TomatoController', 'views/TomatoView', 'presenters/TomatoPresenter',
+            'main'],
 
     callback: test_main
 });
 
-function test_main() {
+function test_main()
+{
     // initialize the base application
-    main();
+
+
     // run tests
-    require(app.manifest.src, function () {
-        require(tests, window.__karma__.start);
+    require(["main"], function (main)
+    {
+        main(window);
+        require([app.manifest.src], function ()
+        {
+            require(tests, window.__karma__.start);
+        })
     });
 }
 
 /**
  * Function.prototype.bind polyfill
  */
-if (!Function.prototype.bind) {
-    Function.prototype.bind = function (oThis) {
-        if (typeof this !== 'function') {
+if (!Function.prototype.bind)
+{
+    Function.prototype.bind = function (oThis)
+    {
+        if (typeof this !== 'function')
+        {
             // closest thing possible to the ECMAScript 5
             // internal IsCallable function
             throw new TypeError('Function.prototype.bind - what is trying to be bound is not callable');
@@ -77,9 +96,11 @@ if (!Function.prototype.bind) {
 
         var aArgs = Array.prototype.slice.call(arguments, 1),
             fToBind = this,
-            fNOP = function () {
+            fNOP = function ()
+            {
             },
-            fBound = function () {
+            fBound = function ()
+            {
                 return fToBind.apply(this instanceof fNOP && oThis
                         ? this
                         : oThis,
@@ -94,15 +115,19 @@ if (!Function.prototype.bind) {
 }
 /*************************************/
 
-function fakePromise(doneValue, errorValue) {
+function fakePromise(doneValue, errorValue)
+{
     var self = {
-        then: function (onOk, onFail) {
-            if (doneValue) {
+        then: function (onOk, onFail)
+        {
+            if (doneValue)
+            {
                 onOk(doneValue);
                 return self;
             }
 
-            if (errorValue) {
+            if (errorValue)
+            {
                 onFail(errorValue);
                 return self;
             }
