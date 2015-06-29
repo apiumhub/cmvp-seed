@@ -17,7 +17,7 @@ define(function (require) {
     RestAPI.newInstance = function (di) {
         di = di || {};
         di.ajaxService = di.ajaxService || AjaxService.newInstance();
-        return di;
+        return new RestAPI(di);
     };
 
     return RestAPI;
