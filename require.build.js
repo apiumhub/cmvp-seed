@@ -7,8 +7,7 @@ requirejs.config({
         "jquery": "../node_modules/jquery/dist/jquery.min",
         "postal": "../node_modules/postal/lib/postal.min",
         "q": "../node_modules/q/q",
-        "functional-option": "../framework/Option",
-        "framework": "../framework/ApplicationFactory",
+        "framework": "../node_modules/cmvp-framework/src/ApplicationFactory",
         "meld": "../node_modules/meld/meld"
     },
 
@@ -26,17 +25,13 @@ requirejs.config({
             "exports": "$"
         },
 
-        "functional-option": {
-            "exports": "Option"
-        },
-
         "framework": {
-            "deps": ["angular", "functional-option"],
+            "deps": ["angular"],
             "exports": "ApplicationFactory"
         }
     },
     "include": [
-        'lodash', 'angular-route', 'angular', 'jquery', 'postal', 'q', 'functional-option',
+        'lodash', 'angular-route', 'angular', 'jquery', 'postal', 'q',
         'framework', 'meld',
         'Configuration',
         'services/EventBus', 'services/AjaxService', 'aspects/ViewRepaintAspect',

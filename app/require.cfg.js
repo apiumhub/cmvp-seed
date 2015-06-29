@@ -8,7 +8,7 @@ requirejs.config({
         'jquery': '../node_modules/jquery/dist/jquery.min',
         'postal': '../node_modules/postal/lib/postal.min',
         'q': '../node_modules/q/q',
-        'framework': '../framework/ApplicationFactory',
+        'framework': '../node_modules/cmvp-framework/src/ApplicationFactory',
         'meld': '../node_modules/meld/meld'
     },
 

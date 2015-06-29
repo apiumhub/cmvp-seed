@@ -23,7 +23,7 @@ requirejs.config({
         'jquery': '/base/node_modules/jquery/dist/jquery.min',
         'postal': '/base/node_modules/postal/lib/postal.min',
         'q': '/base/node_modules/q/q',
-        'framework': '/base/framework/ApplicationFactory',
+        'framework': '/base/node_modules/cmvp-framework/src/ApplicationFactory',
         'meld': '/base/node_modules/meld/meld',
         'sinon': '/base/node_modules/sinon/lib/sinon'
     },

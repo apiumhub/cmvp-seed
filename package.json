@@ -14,7 +14,8 @@
     "postal": "0.12.4",
     "jquery": "1.11.1",
     "q": ">= 1.0.1",
-    "meld": ">= 1.3.1"
+    "meld": ">= 1.3.1",
+    "cmvp-framework": "https://github.com/apiumtech/cmvp-framework.git"
   },
   "engine": "node 0.4.1",
   "devDependencies": {
@@ -35,6 +36,7 @@
     "karma-phantomjs-launcher": "~0.1.4",
     "karma-requirejs": "^0.2.2",
     "load-grunt-tasks": "^1.0.0",
-    "sinon": ">= 1.10.3"
+    "sinon": ">= 1.10.3",
+    "cmvp-test-helpers": "https://github.com/apiumtech/cmvp-test-helpers.git"
   }
 }
