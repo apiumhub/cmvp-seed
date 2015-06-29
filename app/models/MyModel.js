@@ -4,7 +4,7 @@
 define(function (require) {
     var RestAPI = require('services/RestAPI');
 
-    function MyModel(di) {
+    function MyModel (di) {
         this.restAPI = di.restAPI;
     }
 

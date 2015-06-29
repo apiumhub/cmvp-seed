@@ -7,16 +7,16 @@ define(function (require) {
     var MyModel = require('models/MyModel');
     var ViewRepaintAspect = require('cmvp/aspects/ViewRepaintAspect');
 
-    function MyView($scope, model, presenter) {
+    function MyView (di) {
         this.data = {};
         this.event = {};
-        this.$scope = $scope;
+        this.$scope = di.$scope;
 
-        $scope.data = this.data;
-        $scope.event = this.event;
+        this.$scope.data = this.data;
+        this.$scope.event = this.event;
 
-        this.model = model;
-        this.presenter = presenter;
+        this.model = di.model;
+        this.presenter = di.presenter;
     }
 
     MyView.prototype.show = function () {
@@ -33,12 +33,13 @@ define(function (require) {
         this.data.currentError = error.responseText.substr(0, Math.min(error.responseText.length, 128));
     };
 
-    MyView.newInstance = function ($scope, $model, $presenter) {
-        var scope = $scope || {};
-        var model = $model || MyModel.newInstance();
-        var presenter = $presenter || MyPresenter.newInstance();
+    MyView.newInstance = function (di) {
+        di = di || {};
+        di.$scope = di.$scope || {};
+        di.model = di.model || MyModel.newInstance();
+        di.presenter = di.presenter || MyPresenter.newInstance();
 
-        var view = new MyView(scope, model, presenter);
+        var view = new MyView(di);
 
         ViewRepaintAspect.weave(view);
         return view;

@@ -4,8 +4,8 @@
 define(function (require) {
     var EventBus = require('cmvp/services/EventBus');
 
-    function TomatoPresenter($eventBus) {
-        this.eventBus = $eventBus;
+    function TomatoPresenter (di) {
+        this.eventBus = di.eventBus;
     }
 
     TomatoPresenter.prototype.show = function (view) {
@@ -15,9 +15,10 @@ define(function (require) {
         }.bind(this);
     };
 
-    TomatoPresenter.newInstance = function ($eventBus) {
-        var eventBus = $eventBus || EventBus.getInstance();
-        return new TomatoPresenter(eventBus);
+    TomatoPresenter.newInstance = function (di) {
+        di = di || {};
+        di.eventBus = di.eventBus || EventBus.getInstance();
+        return new TomatoPresenter(di);
     };
 
     return TomatoPresenter;

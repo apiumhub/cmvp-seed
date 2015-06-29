@@ -5,8 +5,8 @@
 define(function (require) {
     var EventBus = require('cmvp/services/EventBus');
 
-    function MyPresenter($eventBus) {
-        this.eventBus = $eventBus;
+    function MyPresenter (di) {
+        this.eventBus = di.eventBus;
     }
 
     MyPresenter.prototype.show = function (view, model) {
@@ -30,9 +30,10 @@ define(function (require) {
         }.bind(this);
     };
 
-    MyPresenter.newInstance = function ($eventBus) {
-        var eventBus =  $eventBus || EventBus.getInstance();
-        return new MyPresenter(eventBus);
+    MyPresenter.newInstance = function (di) {
+        di = di || {};
+        di.eventBus = di.eventBus || EventBus.getInstance();
+        return new MyPresenter(di);
     };
 
     return MyPresenter;

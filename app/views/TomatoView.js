@@ -5,15 +5,15 @@ define(function (require) {
     var ViewRepaintAspect = require('cmvp/aspects/ViewRepaintAspect');
     var TomatoPresenter = require('presenters/TomatoPresenter');
 
-    function TomatoView($scope, $tomatoPresenter) {
+    function TomatoView (di) {
         this.data = {};
         this.event = {};
-        this.$scope = $scope;
+        this.$scope = di.$scope;
 
-        $scope.data = this.data;
-        $scope.event = this.event;
+        this.$scope.data = this.data;
+        this.$scope.event = this.event;
 
-        this.presenter = $tomatoPresenter;
+        this.presenter = di.presenter;
         this.setStatus('default');
     }
 
@@ -25,11 +25,12 @@ define(function (require) {
         this.data.status = status;
     };
 
-    TomatoView.newInstance = function ($scope, $tomatoPresenter) {
-        var scope = $scope || {};
-        var tomatoPresenter = $tomatoPresenter || TomatoPresenter.newInstance();
+    TomatoView.newInstance = function (di) {
+        di = di || {};
+        di.$scope = di.$scope || {};
+        di.presenter = di.resenter || TomatoPresenter.newInstance();
 
-        var view = new TomatoView(scope, tomatoPresenter);
+        var view = new TomatoView(di);
         ViewRepaintAspect.weave(view);
         return view;
     };

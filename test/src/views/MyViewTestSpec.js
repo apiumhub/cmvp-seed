@@ -8,7 +8,7 @@ define(function(require)
 
         function exerciseCreateView() {
             var scope = { $apply: function () {} };
-            var view = MyView.newInstance(scope);
+            var view = MyView.newInstance({$scope: scope});
 
             return {scope: scope, view: view};
         }

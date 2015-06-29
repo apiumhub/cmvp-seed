@@ -5,7 +5,7 @@ define(function (require) {
     var MyView = require("views/MyView");
 
     function MyController($scope, $routeParams) {
-        this.view = MyView.newInstance($scope);
+        this.view = MyView.newInstance({$scope: $scope});
 
         if ($routeParams&&$routeParams.modelId) {
             this.view.data.currentId = $routeParams.modelId;
