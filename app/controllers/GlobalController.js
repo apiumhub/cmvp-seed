@@ -2,7 +2,7 @@ define(function (require) {
     var GlobalView = require("views/GolbalView");
 
     function GobalController($scope, $routeParams) {
-        this.view = GobalView.newInstance($scope).getOrElse(throwException("Could not create GobalView!"));
+        this.view = GobalView.newInstance($scope);
 
         //if ($routeParams) {
         //    this.view.data.currentId = $routeParams.modelId;
