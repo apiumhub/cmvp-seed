@@ -4,7 +4,7 @@
 define(function(require)
 {
     describe("MyPresenter", function () {
-        var MyPresenter = require("presenters/MyPresenter").newInstance().getOrElse(throwException("Could not create a basic MyPresenter!"));
+        var MyPresenter = require("presenters/MyPresenter").newInstance();
 
         function exerciseCreateValidPresenter() {
             var showModelSpy = jasmine.createSpy("showModel");

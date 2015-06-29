@@ -17,7 +17,7 @@ define(function (require) {
 
     TomatoPresenter.newInstance = function ($eventBus) {
         var eventBus = $eventBus || EventBus.getInstance();
-        return Some(new TomatoPresenter(eventBus));
+        return new TomatoPresenter(eventBus);
     };
 
     return TomatoPresenter;

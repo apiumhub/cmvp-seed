@@ -18,7 +18,7 @@ define(function (require) {
 
     MyModel.newInstance = function (ajax) {
         var ajaxService = ajax || new AjaxService();
-        return Some(new MyModel(ajaxService));
+        return new MyModel(ajaxService);
     };
 
     return MyModel;

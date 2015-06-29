@@ -32,7 +32,7 @@ define(function (require) {
 
     MyPresenter.newInstance = function ($eventBus) {
         var eventBus =  $eventBus || EventBus.getInstance();
-        return Some(new MyPresenter(eventBus));
+        return new MyPresenter(eventBus);
     };
 
     return MyPresenter;

@@ -35,13 +35,13 @@ define(function (require) {
 
     MyView.newInstance = function ($scope, $model, $presenter) {
         var scope = $scope || {};
-        var model = $model || MyModel.newInstance().getOrElse(throwException("MyModel could not be instantiated!!"));
-        var presenter = $presenter || MyPresenter.newInstance().getOrElse(throwException("MyPresenter could not be instantiated!!"));
+        var model = $model || MyModel.newInstance();
+        var presenter = $presenter || MyPresenter.newInstance();
 
         var view = new MyView(scope, model, presenter);
 
         ViewRepaintAspect.weave(view);
-        return Some(view);
+        return view;
     };
 
     return MyView;

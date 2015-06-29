@@ -27,11 +27,11 @@ define(function (require) {
 
     TomatoView.newInstance = function ($scope, $tomatoPresenter) {
         var scope = $scope || {};
-        var tomatoPresenter = $tomatoPresenter || TomatoPresenter.newInstance().getOrElse(throwException("Could not instantiate TomatoPresenter!!"));
+        var tomatoPresenter = $tomatoPresenter || TomatoPresenter.newInstance();
 
         var view = new TomatoView(scope, tomatoPresenter);
         ViewRepaintAspect.weave(view);
-        return Some(view);
+        return view;
     };
 
     return TomatoView;
