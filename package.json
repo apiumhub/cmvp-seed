@@ -1,6 +1,7 @@
 {
   "name": "cmvp-proto",
   "author": "kmruiz <masruizkevin@gmail.com>",
+  "license" : "BSD-2-Clause",
   "repository": {
     "type": "git",
     "url": "http://github.com/apiumtech/cmvp-seed.git"
