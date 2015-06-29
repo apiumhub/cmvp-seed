@@ -2,7 +2,7 @@
  * Created by kevin on 10/22/14.
  */
 define(function (require) {
-    var AjaxService = require('services/AjaxService');
+    var AjaxService = require('cmvp/services/AjaxService');
 
     function MyModel($ajaxService) {
         this.$ajaxService = $ajaxService;

@@ -24,6 +24,7 @@ requirejs.config({
         'postal': '/base/node_modules/postal/lib/postal.min',
         'q': '/base/node_modules/q/q',
         'framework': '/base/node_modules/cmvp-framework/src/ApplicationFactory',
+        'cmvp': '/base/node_modules/cmvp-framework/src/cmvp',
         'meld': '/base/node_modules/meld/meld',
         'sinon': '/base/node_modules/sinon/lib/sinon'
     },
@@ -51,7 +52,7 @@ requirejs.config({
     'deps': ['lodash', 'angular-route', 'angular', 'jquery', 'postal', 'q',
             'framework', 'meld',
             'Configuration',
-            'services/EventBus', 'services/AjaxService', 'aspects/ViewRepaintAspect',
+            'cmvp/services/EventBus', 'cmvp/services/AjaxService', 'cmvp/aspects/ViewRepaintAspect',
             'controllers/MyController', 'views/MyView', 'presenters/MyPresenter', 'models/MyModel',
             'controllers/TomatoController', 'views/TomatoView', 'presenters/TomatoPresenter',
             'main'],

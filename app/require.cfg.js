@@ -9,6 +9,7 @@ requirejs.config({
         'postal': '../node_modules/postal/lib/postal.min',
         'q': '../node_modules/q/q',
         'framework': '../node_modules/cmvp-framework/src/ApplicationFactory',
+        'cmvp': '../node_modules/cmvp-framework/src/cmvp',
         'meld': '../node_modules/meld/meld'
     },
 

@@ -5,7 +5,7 @@
 define(function (require) {
     var MyPresenter = require('presenters/MyPresenter');
     var MyModel = require('models/MyModel');
-    var ViewRepaintAspect = require('aspects/ViewRepaintAspect');
+    var ViewRepaintAspect = require('cmvp/aspects/ViewRepaintAspect');
 
     function MyView($scope, model, presenter) {
         this.data = {};

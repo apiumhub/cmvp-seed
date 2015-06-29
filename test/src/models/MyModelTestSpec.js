@@ -6,7 +6,7 @@ define(function(require)
 {
     describe("MyModel", function () {
         var MyModel = require('models/MyModel');
-        var AjaxService = require('services/AjaxService');
+        var AjaxService = require('cmvp/services/AjaxService');
 
         function exerciseNewModel(ajaxService) {
             return MyModel.newInstance(ajaxService);

@@ -2,7 +2,7 @@
  * Created by kevin on 10/27/14.
  */
 define(function (require) {
-    var EventBus = require('services/EventBus');
+    var EventBus = require('cmvp/services/EventBus');
 
     function TomatoPresenter($eventBus) {
         this.eventBus = $eventBus;

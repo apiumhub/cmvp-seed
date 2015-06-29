@@ -2,7 +2,7 @@
  * Created by kevin on 10/27/14.
  */
 define(function (require) {
-    var ViewRepaintAspect = require('aspects/ViewRepaintAspect');
+    var ViewRepaintAspect = require('cmvp/aspects/ViewRepaintAspect');
     var TomatoPresenter = require('presenters/TomatoPresenter');
 
     function TomatoView($scope, $tomatoPresenter) {

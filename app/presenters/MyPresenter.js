@@ -3,7 +3,7 @@
  */
 
 define(function (require) {
-    var EventBus = require('services/EventBus');
+    var EventBus = require('cmvp/services/EventBus');
 
     function MyPresenter($eventBus) {
         this.eventBus = $eventBus;
