@@ -24,15 +24,12 @@
  *                  );
  **/
 
-(function (jsScope)
-{
+;(function (jsScope) {
 
     jsScope.ApplicationFactory = {
-        newApplication: function (name, impl)
-        {
+        newApplication: function (name, impl) {
             // ensure that the configuration is valid before creating the application.
-            if (impl == null)
-            {
+            if (impl == null) {
                 throw new Error("impl must not be null.");
             }
             ensureFunction(impl.registerObject, "registerObject");
@@ -42,34 +39,29 @@
             impl = applySetsTo(impl);
             impl = applyGetsTo(impl);
 
-            impl.isComposedWith = function (type)
-            {
+            impl.isComposedWith = function (type) {
                 return impl.type.indexOf(type) != -1;
             };
 
-            impl.composedWith = function (anotherImpl)
-            {
+            impl.composedWith = function (anotherImpl) {
                 var x = impl.type + "|" + anotherImpl.type;
                 var newImpl = {type: x};
 
                 impl.type = x;
                 anotherImpl.type = x;
 
-                newImpl.registerObject = function (cfg, obj)
-                {
+                newImpl.registerObject = function (cfg, obj) {
                     impl.registerObject(cfg, obj);
                     anotherImpl.registerObject(cfg, obj);
                 };
 
-                newImpl.getObject = function (name)
-                {
+                newImpl.getObject = function (name) {
                     var a = impl.getObject(name);
                     var b = anotherImpl.getObject(name);
                     return a || b;
                 };
 
-                newImpl.initialize = function ()
-                {
+                newImpl.initialize = function () {
                     impl.initialize();
                     anotherImpl.initialize();
                 };
@@ -80,36 +72,28 @@
             return impl;
         },
 
-        newRequireApplication: function (name, config)
-        {
+        newRequireApplication: function (name, config) {
             ensureFunction(jsScope.define);
             ensureFunction(jsScope.require);
 
-            if (config)
-            {
+            if (config) {
                 jsScope.requirejs.config(config);
             }
             var impl = {type: 'require'};
-            impl.registerObject = function (configuration, factory)
-            {
+            impl.registerObject = function (configuration, factory) {
                 var cfg = configuration || {};
-                if (cfg.name != null && cfg.dependencies != null)
-                {
+                if (cfg.name != null && cfg.dependencies != null) {
                     jsScope.define(cfg.name, cfg.dependencies, factory);
-                } else if (cfg.name != null && cfg.dependencies == null)
-                {
-                    jsScope.define(cfg.name, [], function (require)
-                    {
+                } else if (cfg.name != null && cfg.dependencies == null) {
+                    jsScope.define(cfg.name, [], function (require) {
                         return factory.bind(require, applyGetsTo({
                             require: require,
                             getObject: require,
                             registerObject: errFun("Parameter is a read-only context")
                         }));
                     });
-                } else
-                {
-                    jsScope.define(function (require)
-                    {
+                } else {
+                    jsScope.define(function (require) {
                         return factory.bind(require, applyGetsTo({
                             require: require,
                             getObject: require,
@@ -119,29 +103,23 @@
                 }
             };
 
-            impl.getObject = function (name)
-            {
-                try
-                {
+            impl.getObject = function (name) {
+                try {
                     return jsScope.require(name);
-                } catch (e)
-                {
+                } catch (e) {
                     console.log(e);
                     return null;
                 }
             };
 
-            impl.initialize = function ()
-            {
+            impl.initialize = function () {
             };
 
             return jsScope.ApplicationFactory.newApplication(name, impl);
         },
 
-        newAngularApplication: function (name, modules, config)
-        {
-            if (jsScope.angular == null)
-            {
+        newAngularApplication: function (name, modules, config) {
+            if (jsScope.angular == null) {
                 throw new Error("AngularJS is not loaded into the current scope");
             }
 
@@ -150,31 +128,23 @@
 
             var impl = {type: 'angular'};
 
-            impl.registerObject = function (configuration, factory)
-            {
+            impl.registerObject = function (configuration, factory) {
                 return null;
             };
 
-            impl.getObject = function (objName)
-            {
+            impl.getObject = function (objName) {
                 return null; // do not use angularjs to detect dependencies
             };
 
-            impl.initialize = function ()
-            {
-                if (impl.isComposedWith("require"))
-                {
-                    jsScope.require(["Application"], function (app)
-                    {
-                        app.manifest.src.forEach(function (value)
-                        {
-                            if (value.indexOf("Controller") != -1)
-                            {
-                                angularApp.controller(value.substring(value.lastIndexOf('/') + 1), ['$scope', '$routeParams', function ($scope, $routeParams)
-                                {
+            impl.initialize = function () {
+                if (impl.isComposedWith("require")) {
+                    jsScope.require(["Application"], function (app) {
+                        app.manifest.src.forEach(function (value) {
+                            if (value.indexOf("Controller") != -1) {
+                                angularApp.controller(value.substring(value.lastIndexOf('/') + 1), ['$scope', '$routeParams', function ($scope, $routeParams) {
                                     var constr = jsScope.require(value);
-                                    var constr2=constr.bind(null, $scope, $routeParams);
-                                    var instance=new constr2();
+                                    var constr2 = constr.bind(null, $scope, $routeParams);
+                                    var instance = new constr2();
                                     return instance;
                                 }]);
                             }
@@ -182,8 +152,7 @@
 
                         jsScope.angular.bootstrap(document, [name]);
                     });
-                } else
-                {
+                } else {
                     jsScope.angular.bootstrap(document, [name]);
                 }
 
@@ -194,47 +163,37 @@
         }
     };
 
-    function isFunction(func)
-    {
+    function isFunction(func) {
         return Object.prototype.toString.call(func) == '[object Function]';
     }
 
-    function ensureFunction(func, paramName)
-    {
-        if (!isFunction(func))
-        {
+    function ensureFunction(func, paramName) {
+        if (!isFunction(func)) {
             throw new Error(paramName + " must be a function.");
         }
         return true;
     }
 
-    function errFun(msg)
-    {
-        return function ()
-        {
+    function errFun(msg) {
+        return function () {
             throw new Error(msg)
         };
     }
 
-    function applyGetsTo(obj)
-    {
+    function applyGetsTo(obj) {
         var impl = obj || {};
 
         impl.getFunction = impl.getObject;
         impl.getView = impl.getController = impl.getPresenter = impl.getModel =
-            impl.getService = function (name)
-            {
+            impl.getService = function (name) {
                 var x = impl.getObject(name);
-                if (!x)
-                {
+                if (!x) {
                     throw new Error("Could not find object: " + name);
                 }
 
-                if (isFunction(x))
-                {
+                if (isFunction(x)) {
                     return x();
-                } else
-                {
+                } else {
                     return x;
                 }
             };
@@ -242,20 +201,16 @@
         return impl;
     }
 
-    function applySetsTo(obj)
-    {
+    function applySetsTo(obj) {
         var impl = obj || {};
 
         impl.registerFunction = impl.registerObject;
         impl.registerView = impl.registerController = impl.registerPresenter = impl.registerModel =
-            impl.registerService = impl.register = function (cfg, factory)
-            {
-                if (factory == null)
-                {
+            impl.registerService = impl.register = function (cfg, factory) {
+                if (factory == null) {
                     ensureFunction(cfg, "factory");
                     impl.registerObject({}, cfg);
-                } else
-                {
+                } else {
                     ensureFunction(factory, "factory");
                     impl.registerObject(cfg, factory);
                 }
