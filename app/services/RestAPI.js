@@ -11,7 +11,7 @@ define(function (require) {
     }
 
     RestAPI.prototype.getMyModel = function (id) {
-        return this.ajaxService.ajax({url: Configuration.api.get_my_model + id + ".json"});
+        return this.ajaxService.ajax("GET", Configuration.api.get_my_model + id + ".json");
     };
 
     RestAPI.newInstance = function (di) {
