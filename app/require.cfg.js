@@ -8,7 +8,6 @@ requirejs.config({
         'jquery': '../node_modules/jquery/dist/jquery.min',
         'postal': '../node_modules/postal/lib/postal.min',
         'q': '../node_modules/q/q',
-        'functional-option': '../framework/Option',
         'framework': '../framework/ApplicationFactory',
         'meld': '../node_modules/meld/meld'
     },
@@ -27,12 +26,8 @@ requirejs.config({
             exports: '$'
         },
 
-        'functional-option': {
-            exports: 'Option'
-        },
-
         'framework': {
-            deps: ['angular', 'functional-option'],
+            deps: ['angular'],
             exports: 'ApplicationFactory'
         },
 
@@ -42,7 +37,7 @@ requirejs.config({
 
     },
 
-    'deps': ['main', 'angular', 'angular-route', 'jquery', 'q', 'postal', 'meld', 'framework', 'functional-option'],
+    'deps': ['main', 'angular', 'angular-route', 'jquery', 'q', 'postal', 'meld', 'framework'],
     'callback': function (main) {
         main(window);
     }

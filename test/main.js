@@ -23,7 +23,6 @@ requirejs.config({
         'jquery': '/base/node_modules/jquery/dist/jquery.min',
         'postal': '/base/node_modules/postal/lib/postal.min',
         'q': '/base/node_modules/q/q',
-        'functional-option': '/base/framework/Option',
         'framework': '/base/framework/ApplicationFactory',
         'meld': '/base/node_modules/meld/meld',
         'sinon': '/base/node_modules/sinon/lib/sinon'
@@ -43,17 +42,13 @@ requirejs.config({
             exports: '$'
         },
 
-        'functional-option': {
-            exports: 'Option'
-        },
-
         'framework': {
-            deps: ['angular', 'functional-option'],
+            deps: ['angular'],
             exports: 'ApplicationFactory'
         }
     },
 
-    'deps': ['lodash', 'angular-route', 'angular', 'jquery', 'postal', 'q', 'functional-option',
+    'deps': ['lodash', 'angular-route', 'angular', 'jquery', 'postal', 'q',
             'framework', 'meld',
             'Configuration',
             'services/EventBus', 'services/AjaxService', 'aspects/ViewRepaintAspect',
