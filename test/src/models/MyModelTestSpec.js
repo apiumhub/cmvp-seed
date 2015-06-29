@@ -7,6 +7,8 @@ define(function (require) {
         var MyModel = require('models/MyModel');
         var RestAPI = require('services/RestAPI');
 
+        var Promise = require("test-helpers/Promise");
+
         function exerciseNewModel(restAPI) {
             return MyModel.newInstance({restAPI: restAPI});
         }
@@ -15,7 +17,7 @@ define(function (require) {
             var service = RestAPI.newInstance();
             var expectedValue = {text: "Some Value"};
 
-            service.getMyModel = function () { return fakePromise(expectedValue) };
+            service.getMyModel = function () { return Promise.fake(expectedValue) };
             return { service: service, expectedValue: expectedValue };
         }
 
@@ -23,7 +25,7 @@ define(function (require) {
             var service = RestAPI.newInstance();
             var expectedValue = "some error";
 
-            service.getMyModel = function () { return fakePromise(null, expectedValue) };
+            service.getMyModel = function () { return Promise.fake(null, expectedValue) };
             return { service: service, expectedValue: expectedValue };
         }
 

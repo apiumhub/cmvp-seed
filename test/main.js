@@ -26,7 +26,8 @@ requirejs.config({
         'framework': '/base/node_modules/cmvp-framework/src/ApplicationFactory',
         'cmvp': '/base/node_modules/cmvp-framework/src/cmvp',
         'meld': '/base/node_modules/meld/meld',
-        'sinon': '/base/node_modules/sinon/lib/sinon'
+        'sinon': '/base/node_modules/sinon/lib/sinon',
+        'test-helpers': '/base/node_modules/cmvp-test-helpers/src'
     },
 
     'shim': {
@@ -108,27 +109,4 @@ if (!Function.prototype.bind)
 
         return fBound;
     };
-}
-/*************************************/
-
-function fakePromise(doneValue, errorValue)
-{
-    var self = {
-        then: function (onOk, onFail)
-        {
-            if (doneValue)
-            {
-                onOk(doneValue);
-                return self;
-            }
-
-            if (errorValue)
-            {
-                onFail(errorValue);
-                return self;
-            }
-        }
-    };
-
-    return self;
 }

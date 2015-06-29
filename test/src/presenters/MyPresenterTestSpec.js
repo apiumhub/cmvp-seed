@@ -5,6 +5,7 @@ define(function(require)
 {
     describe("MyPresenter", function () {
         var MyPresenter = require("presenters/MyPresenter").newInstance();
+        var Promise = require("test-helpers/Promise");
 
         function exerciseCreateValidPresenter() {
             var showModelSpy = jasmine.createSpy("showModel");
@@ -14,7 +15,7 @@ define(function(require)
 
             var MyModel = {};
             MyModel.getModelById = function () {
-                return fakePromise({text: "Some Text"}, null);
+                return Promise.fake({text: "Some Text"}, null);
             };
 
             MyPresenter.show(MyView, MyModel);

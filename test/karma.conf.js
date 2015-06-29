@@ -15,8 +15,7 @@ module.exports = function(config) {
             {pattern: 'node_modules/cmvp-framework/src/**/*.js', included: false},
             {pattern: 'app/**/*.js', included: false},
             {pattern: 'config/**/*.json', included: false},
-            {pattern: 'test/helpers.js', included: true},
-            {pattern: 'test/helpers/**/*.js', included: true},
+            {pattern: 'node_modules/cmvp-test-helpers/src/**/*.js', included: true},
             {pattern: 'test/src/**/*.js', included: false},
 
             /** Load Tests **/
