@@ -2,10 +2,10 @@
  * Created by kevin on 10/22/14.
  */
 define(function (require) {
-    var AjaxService = require('cmvp/services/AjaxService');
+    var RestAPI = require('services/RestAPI');
 
-    function MyModel($ajaxService) {
-        this.$ajaxService = $ajaxService;
+    function MyModel(di) {
+        this.restAPI = di.restAPI;
     }
 
     MyModel.prototype.getModelById = function (id) {
@@ -13,12 +13,13 @@ define(function (require) {
             throw new Error("Validation error!");
         }
 
-        return this.$ajaxService.ajax({url: "/json/" + id + ".json"});
+        return this.restAPI.getMyModel(id);
     };
 
-    MyModel.newInstance = function (ajax) {
-        var ajaxService = ajax || new AjaxService();
-        return new MyModel(ajaxService);
+    MyModel.newInstance = function (di) {
+        di = di || {};
+        di.restAPI = di.restAPI || RestAPI.newInstance();
+        return new MyModel(di);
     };
 
     return MyModel;

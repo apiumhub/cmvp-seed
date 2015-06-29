@@ -2,34 +2,33 @@
  * Created by kevin on 10/24/14.
  */
 
-define(function(require)
-{
+define(function (require) {
     describe("MyModel", function () {
         var MyModel = require('models/MyModel');
-        var AjaxService = require('cmvp/services/AjaxService');
+        var RestAPI = require('services/RestAPI');
 
-        function exerciseNewModel(ajaxService) {
-            return MyModel.newInstance(ajaxService);
+        function exerciseNewModel(restAPI) {
+            return MyModel.newInstance({restAPI: restAPI});
         }
 
-        function exerciseOKAjaxService() {
-            var service = new AjaxService();
+        function exerciseOKRestAPI() {
+            var service = RestAPI.newInstance();
             var expectedValue = {text: "Some Value"};
 
-            service.ajax = function () { return fakePromise(expectedValue) };
+            service.getMyModel = function () { return fakePromise(expectedValue) };
             return { service: service, expectedValue: expectedValue };
         }
 
-        function exerciseFailAjaxService() {
-            var service = new AjaxService();
+        function exerciseFailRestAPI() {
+            var service = RestAPI.newInstance();
             var expectedValue = "some error";
 
-            service.ajax = function () { return fakePromise(null, expectedValue) };
+            service.getMyModel = function () { return fakePromise(null, expectedValue) };
             return { service: service, expectedValue: expectedValue };
         }
 
         it("should call the OK callback on a promise when the data exists", function () {
-            var ajaxContext = exerciseOKAjaxService();
+            var ajaxContext = exerciseOKRestAPI();
             var model = exerciseNewModel(ajaxContext.service);
 
             model.getModelById(0).then(function (value) {
@@ -38,7 +37,7 @@ define(function(require)
         });
 
         it("should call fail callback on a promise when the data does not exist", function () {
-            var ajaxContext = exerciseFailAjaxService();
+            var ajaxContext = exerciseFailRestAPI();
             var model = exerciseNewModel(ajaxContext.service);
 
             model.getModelById(0).then(function () {}, function (value) {
@@ -46,4 +45,4 @@ define(function(require)
             });
         });
     });
-})
+});
