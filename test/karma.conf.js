@@ -8,11 +8,11 @@ module.exports = function(config) {
 
         // list of files / patterns to load in the browser
         files: [
-            {pattern: 'node_modules/!(cmvp-framework)/**/*.js', included: false},
+            {pattern: 'node_modules/!(cmvp-*)/**/*.js', included: false},
             {pattern: 'locales/**/*.json', included: false},
             {pattern: 'vendor/**/*.js', included: false},
             {pattern: 'node_modules/sinon/pkg/sinon*.js', included: true},
-            {pattern: 'node_modules/cmvp-framework/src/**/*.js', included: false},
+            {pattern: 'node_modules/cmvp-*/src/**/*.js', included: false},
             {pattern: 'app/**/*.js', included: false},
             {pattern: 'config/**/*.json', included: false},
             {pattern: 'node_modules/cmvp-test-helpers/src/**/*.js', included: true},
