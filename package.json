@@ -15,7 +15,7 @@
     "jquery": "1.11.1",
     "q": ">= 1.0.1",
     "meld": ">= 1.3.1",
-    "cmvp-framework": "https://github.com/apiumtech/cmvp-framework.git#c64a33d54b9c59c0cf27c92d0b4e7a854850a17c"
+    "cmvp-framework": "https://github.com/apiumtech/cmvp-framework.git#245ce40323ecc761399ea339ed54bc65d0f2e94c"
   },
   "engine": "node 0.4.1",
   "devDependencies": {
@@ -36,7 +36,6 @@
     "karma-phantomjs-launcher": "~0.1.4",
     "karma-requirejs": "^0.2.2",
     "load-grunt-tasks": "^1.0.0",
-    "sinon": ">= 1.10.3",
-    "cmvp-test-helpers": "https://github.com/apiumtech/cmvp-test-helpers.git#d5ff4a9e534d40ba7fdcfd1318fc397f554d57cd"
+    "sinon": ">= 1.10.3"
   }
 }

@@ -25,9 +25,9 @@ requirejs.config({
         'q': '/base/node_modules/q/q',
         'framework': '/base/node_modules/cmvp-framework/src/ApplicationFactory',
         'cmvp': '/base/node_modules/cmvp-framework/src/cmvp',
+        'test-helpers': '/base/node_modules/cmvp-framework/src/test-helpers',
         'meld': '/base/node_modules/meld/meld',
-        'sinon': '/base/node_modules/sinon/lib/sinon',
-        'test-helpers': '/base/node_modules/cmvp-test-helpers/src'
+        'sinon': '/base/node_modules/sinon/lib/sinon'
     },
 
     'shim': {
