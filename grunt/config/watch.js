@@ -16,6 +16,13 @@ module.exports = function (grunt) {
             options: {
                 livereload: true
             }
+        },
+        'js': {
+            files: 'app/**/*.js',
+            tasks: ['requirejs:compile'],
+            options: {
+                livereload: true
+            }
         }
     };
-}
+};
