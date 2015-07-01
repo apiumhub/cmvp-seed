@@ -19,10 +19,7 @@ module.exports = function (grunt) {
         },
         'js': {
             files: 'app/**/*.js',
-            tasks: ['requirejs:compile'],
-            options: {
-                livereload: true
-            }
+            tasks: ['requirejs:compile']
         }
     };
 };
