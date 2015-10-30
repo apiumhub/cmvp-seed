@@ -1,0 +1,17 @@
+<div ng-controller="NumbersController" ng-init="event.onLoad()">
+    <label for="currentId">Current Model Id</label>
+    <input id="currentId" type="text" ng-change="fn.onChangeModel(data.currentId)" ng-model="data.currentId" /><br />
+    <table>
+        <tr>
+            <td><div ng-include="'/templates/tomatoView.html'"></div></td>
+            <td style="border-left: 1px solid gray; padding-left: 15px;">
+                <div>
+                    {{ data.currentModel.text }}
+                </div>
+                <div style="color: red">
+                    {{ data.currentError }}
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

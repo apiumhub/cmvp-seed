@@ -1,7 +1,7 @@
 /**
  * Created by kevin on 12/9/14.
  */
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     'use strict';
 
     return {
@@ -17,7 +17,7 @@ module.exports = function (grunt) {
                 'report': 'min'
             },
             'files': {
-                'build/css/cmvp-proto.min.css': 'assets/less/main.less'
+                'build/css/<%= pkg.name %>.min.css': 'assets/less/main.less'
             }
         }
     };

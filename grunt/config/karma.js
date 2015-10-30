@@ -1,7 +1,7 @@
 /**
  * Created by kevin on 2/9/15.
  */
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     return {
         unit: {
             configFile: 'test/karma.conf.js'

@@ -1,4 +1,4 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     'use strict';
 
     var config = {
@@ -10,9 +10,9 @@ module.exports = function (grunt) {
     grunt.initConfig(config);
 
     // Read config files from the `grunt/config/` folder
-    grunt.file.expand('grunt/config/*.js').forEach(function (path) {
-        var property = /grunt\/config\/(.+)\.js/.exec(path)[1],
-            module = require('./' + path);
+    grunt.file.expand('grunt/config/*.js').forEach(function(path) {
+        var property = /grunt\/config\/(.+)\.js/.exec(path)[1];
+        var module = require('./' + path);
         config[property] = typeof module === 'function' ? module(grunt) : module;
     });
 

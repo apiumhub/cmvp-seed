@@ -8,7 +8,8 @@ requirejs.config({
         'jquery': '../node_modules/jquery/dist/jquery.min',
         'postal': '../node_modules/postal/lib/postal.min',
         'q': '../node_modules/q/q',
-        'framework': '../framework/ApplicationFactory',
+        'framework': '../node_modules/cmvp-framework/src/ApplicationFactory',
+        'cmvp': '../node_modules/cmvp-framework/src/cmvp',
         'meld': '../node_modules/meld/meld'
     },
 
@@ -31,15 +32,30 @@ requirejs.config({
             exports: 'ApplicationFactory'
         },
 
-        'postal':{
+        'postal': {
             exports: 'postal'
         }
-
     },
 
     'deps': ['main', 'angular', 'angular-route', 'jquery', 'q', 'postal', 'meld', 'framework'],
-    'callback': function (main) {
-        main(window);
-    }
+    'callback': function() {
+        require(['main']);
+    },
+    // for requirejs compilation:
+    'include': [
+        'lodash', 'angular-route', 'angular', 'jquery', 'postal', 'q',
+        'framework',
+        'cmvp/services/EventBus', 'cmvp/services/AjaxService', 'cmvp/aspects/ViewRepaintAspect',
+        'ui/PomodoroModel.js',
+        'ui/PomodoroView.js',
+        'ui/PomodoroPresenter.js',
+        'ui/PomodoroController.js',
+        'ui/NumbersModel.js',
+        'ui/NumbersView.js',
+        'ui/NumbersPresenter.js',
+        'ui/NumbersController.js',
+        //CMVP-SCRIPT-PLACEHOLDER
+        'main'
+    ]
 });
 

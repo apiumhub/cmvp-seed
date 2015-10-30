@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>CMVP Seed (dev)</title>
+    <script data-main="/app/require.cfg.js" src="/node_modules/requirejs/require.js"></script>
+    <link rel="stylesheet" href="/build/css/cmvp-seed.min.css" />
+</head>
+<body>
+<div ng-view></div>
+<script type="text/ng-template" id="templates/dashboard/layout.html">
+    <nav class="navbar navbar-default" ng-include="'templates/dashboard/header.html'"></nav>
+    <div class="main-side" ng-include="pageContent"></div>
+</script>
+</body>
+</html>

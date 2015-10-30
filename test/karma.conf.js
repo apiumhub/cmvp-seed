@@ -8,18 +8,16 @@ module.exports = function(config) {
 
         // list of files / patterns to load in the browser
         files: [
-            {pattern: 'node_modules/**/*.js', included: false},
+            'node_modules/polyfill-function-prototype-bind/bind.js',
+            {pattern: 'node_modules/!(cmvp-framework)/**/*.js', included: false},
             {pattern: 'locales/**/*.json', included: false},
-            {pattern: 'vendor/**/*.js', included: false},
             {pattern: 'node_modules/sinon/pkg/sinon*.js', included: true},
-            {pattern: 'framework/**/*.js', included: false},
+            {pattern: 'node_modules/cmvp-framework/src/**/*.js', included: false},
             {pattern: 'app/**/*.js', included: false},
-            {pattern: 'config/**/*.json', included: false},
-            {pattern: 'test/helpers.js', included: true},
-            {pattern: 'test/helpers/**/*.js', included: true},
             {pattern: 'test/src/**/*.js', included: false},
-
-            /** Load Tests **/
+            {pattern: 'test/config/*.js', included: false},
+            {pattern: 'vendor/*.js', included: false},
+        /** Load Tests **/
             'test/main.js'
         ],
         // use dots reporter, as travis terminal does not support escaping sequences
@@ -33,13 +31,12 @@ module.exports = function(config) {
         },
 
         preprocessors: {
-            'app/**/*.js': 'coverage',
-            'framework/**/*.js': 'coverage'
+            'app/**/*.js': ['coverage']
         },
 
         coverageReporter: {
             type: 'lcovonly',
-            dir: 'reports/',
+            dir: 'reports',
             file: 'lconv.info'
         },
 
@@ -53,7 +50,7 @@ module.exports = function(config) {
         colors: true,
 
         // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-        logLevel: config.LOG_INFO,
+        logLevel: config.LOG_ERROR,
 
         autoWatch: true,
 
@@ -74,5 +71,5 @@ module.exports = function(config) {
         // report which specs are slower than 10ms
         // CLI --report-slower-than 500
         reportSlowerThan: 500
-    })
+    });
 };

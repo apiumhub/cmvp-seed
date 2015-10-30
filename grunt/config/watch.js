@@ -1,25 +1,31 @@
 /**
  * Created by kevin on 2/9/15.
  */
-module.exports = function (grunt) {
+module.exports = function(grunt) {
+    var lessFiles = 'assets/less/**/*.less';
+    var jsFiles = 'app/**/*.js';
+    var templatesFiles = 'templates/**/*.html';
     return {
-        'sass': {
-            files: 'assets/sass/**/*.scss',
-            tasks: ['sass:compile'],
-            options: {
-                livereload: true
-            }
-        },
         'less': {
-            files: 'assets/less/**/*.less',
-            tasks: ['less:compile'],
-            options: {
-                livereload: true
-            }
+            files: lessFiles,
+            tasks: ['less:compile']
         },
         'js': {
-            files: 'app/**/*.js',
+            files: jsFiles,
             tasks: ['requirejs:compile']
+        },
+        'livereload': {
+            files: [lessFiles, jsFiles, templatesFiles],
+            options: {
+                livereload: 35729
+            }
+        },
+        'eslint': {
+            options: {
+                atBegin: true
+            },
+            files: ['app/**/*.js', 'test/**/*.js', 'grunt/**/*.js', 'Gruntfile.js'],
+            tasks: ['eslint:check']
         }
     };
 };
