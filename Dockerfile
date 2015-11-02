@@ -9,6 +9,8 @@ ADD package.json /app/
 RUN npm install
 
 EXPOSE 9000
+EXPOSE 35729
+
 CMD grunt deploy:dev
 
 # Add code
