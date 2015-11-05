@@ -13,7 +13,7 @@ update_main() {
         local file=$(fix_path ${FILES[$key]})
         if ! [[ "$file" =~ "$TEST_EXT" ]] ; then
             file=$(echo "$file" | sed "s/$APP_PATH\///g")
-            file=$(echo "$file" | sed "s/\.js\///g")
+            file=$(echo "$file" | sed "s/\.js//g")
             local find="\/\/CMVP-SCRIPT-PLACEHOLDER"
             local replace="'$file',\n        \/\/CMVP-SCRIPT-PLACEHOLDER"
             sed -i "s%$find%$replace%g" app/require.cfg.js
