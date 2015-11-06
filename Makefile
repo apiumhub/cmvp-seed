@@ -11,7 +11,7 @@ docker-test:
 	@mkdir -p reports
 	@docker run --rm -v `pwd`/reports:/usr/src/app/reports $(IMAGE) grunt test
 
-docker-build: docker-image docker-test docker-push
+docker-build: docker-image docker-test
 
 docker-push:
 	@docker tag -f $(IMAGE) $(IMAGE):$(TAG)
