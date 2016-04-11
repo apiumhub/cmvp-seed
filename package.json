@@ -7,7 +7,7 @@
     "url": "http://github.com/apiumtech/cmvp-seed.git"
   },
   "scripts": {
-    "start": "./node_modules/http-server/bin/http-server . -p 34341 -a 0.0.0.0 -d false -i false -c-1"
+    "start": "./node_modules/http-server/bin/http-server . -p 5555 -a 0.0.0.0 -d false -i false -c-1"
   },
   "dependencies": {
     "angular": "1.5.3",
