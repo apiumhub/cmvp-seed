@@ -4,7 +4,7 @@
 module.exports = function(grunt) {
     return {
         'dev-deploy': {
-            tasks: ['watch:less', 'watch:js', 'watch:livereload', 'http-server:dev'],
+            tasks: ['watch:less', 'watch:js', 'watch:livereload'],
             options: {
                 'logConcurrentOutput': true,
                 'limit': 10

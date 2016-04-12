@@ -7,7 +7,7 @@
     "url": "http://github.com/apiumtech/cmvp-seed.git"
   },
   "scripts": {
-    "start": "./node_modules/http-server/bin/http-server . -p 5555 -a 0.0.0.0 -d false -i false -c-1"
+    "start": "./node_modules/http-server/bin/http-server . -p 5555 -a 0.0.0.0 -d false -c-1"
   },
   "engines": {
     "node": "4.4.x",
@@ -27,7 +27,8 @@
     "postal": "0.12.4",
     "q": "1.4.1",
     "require": "2.4.18",
-    "requirejs": "2.1.18"
+    "requirejs": "2.1.18",
+    "http-server": "0.9.0"
   },
   "devDependencies": {
     "grunt": "0.4.5",
@@ -36,7 +37,6 @@
     "grunt-contrib-requirejs": "0.4.4",
     "grunt-contrib-watch": "0.6.1",
     "grunt-eslint": "16.0.0",
-    "grunt-http-server": "1.4.0",
     "grunt-karma": "0.9.0",
     "grunt-preprocess": "4.2.0",
     "grunt-shell": "1.1.2",
