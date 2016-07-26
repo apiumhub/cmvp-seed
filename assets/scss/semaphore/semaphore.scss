@@ -1,4 +1,4 @@
-.semaphore(@color) {
+@mixin semaphore($color) {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -6,19 +6,19 @@
   height: 32px;
   width: 32px;
 
-  background-color: @color;
+  background-color: $color;
 
   cursor: pointer;
 }
 
 .semaphore-default {
-  .semaphore(orange);
+  @include semaphore(orange);
 }
 
 .semaphore-ok {
-  .semaphore(#539628);
+  @include semaphore(#539628);
 }
 
 .semaphore-fail {
-  .semaphore(#882121);
+  @include semaphore(#882121);
 }
