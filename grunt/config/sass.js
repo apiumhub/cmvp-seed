@@ -7,7 +7,8 @@ module.exports = function(grunt) {
     return {
         dist: {
             options: {
-                style: 'compressed'
+                style: 'compressed',
+                noCache: true
             },
             files: {
                 'build/css/<%= pkg.name %>.min.css': 'assets/scss/main.scss'
