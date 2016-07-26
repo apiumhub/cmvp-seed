@@ -28,8 +28,8 @@
   "devDependencies": {
     "grunt": "0.4.5",
     "grunt-concurrent": "1.0.1",
-    "grunt-contrib-less": "0.12.0",
     "grunt-contrib-requirejs": "0.4.4",
+    "grunt-contrib-sass": "1.0.0",
     "grunt-contrib-watch": "0.6.1",
     "grunt-eslint": "16.0.0",
     "grunt-http-server": "1.4.0",
