@@ -2,20 +2,20 @@
  * Created by kevin on 2/9/15.
  */
 module.exports = function(grunt) {
-    var lessFiles = 'assets/less/**/*.less';
+    var scssFiles = 'assets/scss/**/*.scss';
     var jsFiles = 'app/**/*.js';
     var templatesFiles = 'templates/**/*.html';
     return {
-        'less': {
-            files: lessFiles,
-            tasks: ['less:compile']
+        'sass': {
+            files: scssFiles,
+            tasks: ['sass:dist']
         },
         'js': {
             files: jsFiles,
             tasks: ['requirejs:compile']
         },
         'livereload': {
-            files: [lessFiles, jsFiles, templatesFiles],
+            files: [scssFiles, jsFiles, templatesFiles],
             options: {
                 livereload: 35729
             }

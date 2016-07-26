@@ -3,7 +3,7 @@
  */
 module.exports = function(grunt) {
     var compileTasks = [
-        'less:compile',
+        'sass:dist',
         'requirejs:compile'
     ];
     grunt.registerTask('build:dev', ['preprocess:dev'].concat(compileTasks));
