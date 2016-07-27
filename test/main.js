@@ -1,15 +1,13 @@
 requirejs.config({
     'baseUrl': '/base/app',
-    'deps': [
-        'ui/PomodoroController',
-        'ui/NumbersController'
-    ],
     'paths': {
         'lodash': '/base/node_modules/postal/node_modules/lodash/dist/lodash.min',
         'postal': '/base/node_modules/postal/lib/postal.min',
         'q': '/base/node_modules/q/q',
         'cmvp': '/base/node_modules/cmvp-framework/src/cmvp',
-        'meld': '/base/node_modules/meld/meld',
+        'test-helpers': '/base/node_modules/cmvp-framework/src/test-helpers',
+        'sinon': '/base/node_modules/sinon/lib/sinon',
+        'meld': '/base/node_modules/meld/meld'
     },
     callback: runTests
 });

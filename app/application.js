@@ -20,28 +20,15 @@ define([
 
     AngularConfig.$inject = [ '$routeProvider', '$locationProvider'];
 
-    /** Application Building **/
-    var app = ApplicationFactory.newRequireApplication('RequireJS')
-        .composedWith(ApplicationFactory.newAngularApplication('AngularApp', [
+    var app = ApplicationFactory.newInstance({
+        angularConfig: AngularConfig,
+        angularModules: [
             'ngRoute'
-        ], AngularConfig));
-
-    app.manifest = {
-        authors: [ 'apiumtech' ],
-        version: 0.1,
-        src: [
+        ],
+        components: [
             'ui/PomodoroController',
             'ui/NumbersController'
         ]
-    };
-
-    /** Application basic configuration **/
-    app.registerObject({name: 'SourceList', dependencies: app.manifest.src}, function() {
-        return app.manifest.src;
-    });
-
-    app.registerObject({name: 'Application', dependencies: ['SourceList']}, function() {
-        return app;
     });
 
     return app;
