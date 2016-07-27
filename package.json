@@ -8,7 +8,8 @@
   },
   "scripts": {
     "dev": "grunt deploy:dev",
-    "prod": "grunt deploy:prod"
+    "prod": "grunt deploy:prod",
+    "test": "karma start ./test/karma.conf.js --single-run"
   },
   "dependencies": {
     "angular": "1.5.3",
@@ -41,11 +42,12 @@
     "grunt-http-server": "2.0.0",
     "grunt-shell": "1.1.2",
     "jasmine": "2.3.1",
-    "karma": "0.13.22",
+    "karma": "1.1.2",
     "karma-coverage": "0.2.7",
     "karma-jasmine": "0.2.3",
     "karma-junit-reporter": "0.2.2",
-    "karma-phantomjs-launcher": "0.1.4",
+    "phantomjs-prebuilt": "2.1.8",
+    "karma-phantomjs-launcher": "1.0.1",
     "karma-requirejs": "0.2.2",
     "load-grunt-tasks": "1.0.0",
     "polyfill-function-prototype-bind": "0.0.1",
