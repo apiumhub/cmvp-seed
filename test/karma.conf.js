@@ -8,15 +8,10 @@ module.exports = function(config) {
 
         // list of files / patterns to load in the browser
         files: [
-            'node_modules/polyfill-function-prototype-bind/bind.js',
             {pattern: 'node_modules/!(cmvp-framework)/**/*.js', included: false},
-            {pattern: 'locales/**/*.json', included: false},
-            {pattern: 'node_modules/sinon/pkg/sinon.js', included: true},
             {pattern: 'node_modules/cmvp-framework/src/**/*.js', included: false},
             {pattern: 'app/**/*.js', included: false},
             {pattern: 'test/src/**/*.js', included: false},
-            {pattern: 'test/config/*.js', included: false},
-            {pattern: 'vendor/*.js', included: false},
         /** Load Tests **/
             'test/main.js'
         ],
