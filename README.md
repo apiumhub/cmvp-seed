@@ -17,6 +17,9 @@ To do this:
 * Run the tests
 <div align="center"><img src="http://apiumtech.com/wp-content/uploads/2015/03/test_ok_2.png" > </img></div>
 
+## Running the server
+
+`npm start`
 
 ## About CMVP Architecture
 
