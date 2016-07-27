@@ -46,14 +46,14 @@ requirejs.config({
         'lodash', 'angular-route', 'angular', 'jquery', 'postal', 'q',
         'framework',
         'cmvp/services/EventBus', 'cmvp/services/AjaxService', 'cmvp/aspects/ViewRepaintAspect',
-        'ui/PomodoroModel.js',
-        'ui/PomodoroView.js',
-        'ui/PomodoroPresenter.js',
-        'ui/PomodoroController.js',
-        'ui/NumbersModel.js',
-        'ui/NumbersView.js',
-        'ui/NumbersPresenter.js',
-        'ui/NumbersController.js',
+        'ui/PomodoroModel',
+        'ui/PomodoroView',
+        'ui/PomodoroPresenter',
+        'ui/PomodoroController',
+        'ui/NumbersModel',
+        'ui/NumbersView',
+        'ui/NumbersPresenter',
+        'ui/NumbersController',
         //CMVP-SCRIPT-PLACEHOLDER
         'main'
     ]
