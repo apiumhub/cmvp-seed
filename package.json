@@ -7,7 +7,8 @@
     "url": "http://github.com/apiumtech/cmvp-seed.git"
   },
   "scripts": {
-    "start": "http-server . -p 5555 -a 0.0.0.0 -d false -i false -c-1"
+    "dev": "grunt deploy:dev",
+    "prod": "grunt deploy:prod"
   },
   "dependencies": {
     "angular": "1.5.3",

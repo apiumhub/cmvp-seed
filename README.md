@@ -19,7 +19,13 @@ To do this:
 
 ## Running the server
 
-`npm start`
+To build minified version:
+
+- Run `npm run prod`
+
+Start the development server:
+
+- Run `npm run dev`
 
 ## About CMVP Architecture
 
